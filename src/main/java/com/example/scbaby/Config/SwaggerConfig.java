@@ -17,7 +17,7 @@ public class SwaggerConfig {
         objects.add(new Server().url("/"));
         return new OpenAPI().servers(objects)
                 .info(new Info()
-                        .title("DevHive API")
+                        .title("SC-Baby API")
                         .version("1.0")
                         .description("Base URL: /"));
     }
