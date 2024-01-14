@@ -1,6 +1,5 @@
 package com.example.scbaby.Bean.UserBean;
 
-import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Model.DTO.User.Res.UserGetRes;
 import com.example.scbaby.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
