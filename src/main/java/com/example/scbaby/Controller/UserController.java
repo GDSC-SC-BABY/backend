@@ -5,7 +5,6 @@ import com.example.scbaby.Model.DTO.User.Req.UserRegistReq;
 import com.example.scbaby.Model.DTO.User.Res.UserGetRes;
 import com.example.scbaby.Service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
