@@ -25,5 +25,5 @@ public class UserDAO {
     private String email;
     private String name;
     private String residence;
-    
+
 }

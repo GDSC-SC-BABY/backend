@@ -51,4 +51,12 @@ public class BabyDAO {
         this.birthHeight = birthHeight;
         this.birthWeight = birthWeight;
     }
+    @OneToMany(mappedBy = "baby")
+    private List<FirstBabyFoodDAO> firstBabyFoodDAOS;
+
+    @OneToMany(mappedBy = "baby")
+    private List<BabyFoodDAO> babyFoodDAOS;
+
+    @OneToMany(mappedBy = "baby")
+    private List<SnackDAO> snackDAOS;
 }
