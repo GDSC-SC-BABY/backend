@@ -3,26 +3,26 @@ package com.example.scbaby.Model.DAO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Entity
-@Table(name = "baby_code")
+@Table(name = "beverages")
+@Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BabyCodeDAO {
+public class BeverageDAO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long beverageId;
+
+    private String beverageName;
 
     @ManyToOne
-    @JoinColumn(name = "baby_id")
-    private BabyDAO baby;
-
-    private String babyCode;
+    @JoinColumn(name = "snack_id")
+    private SnackDAO snack;
 
     @Builder.Default
-    private LocalDateTime dateTime = LocalDateTime.now();
+    private boolean Allergy = false;
 }
