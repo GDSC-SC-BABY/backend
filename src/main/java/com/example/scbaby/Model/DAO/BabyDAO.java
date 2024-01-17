@@ -29,7 +29,6 @@ public class BabyDAO {
     private String gender;
 
     //출생일
-    @Column(updatable = false)
     private LocalDateTime dateTime;
 
     //프로필 이미지 URL
@@ -51,8 +50,6 @@ public class BabyDAO {
         this.birthHeight = birthHeight;
         this.birthWeight = birthWeight;
     }
-    @OneToMany(mappedBy = "baby")
-    private List<FirstBabyFoodDAO> firstBabyFoodDAOS;
 
     @OneToMany(mappedBy = "baby")
     private List<BabyFoodDAO> babyFoodDAOS;

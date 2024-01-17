@@ -22,5 +22,7 @@ public class BabyCodeDAO {
     private BabyDAO baby;
 
     private String babyCode;
-    private LocalDateTime dateTime;
+
+    @Builder.Default
+    private LocalDateTime dateTime = LocalDateTime.now();
 }
