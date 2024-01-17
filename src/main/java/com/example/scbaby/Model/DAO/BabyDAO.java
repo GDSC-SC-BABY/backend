@@ -17,7 +17,8 @@ import java.util.List;
 @AllArgsConstructor
 public class BabyDAO {
     @Id
-    private String babyId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long babyId;
 
     @OneToMany(mappedBy = "baby")
     private List<BabyUserLinkDAO> babyUserLinkDAOS;
@@ -41,8 +42,7 @@ public class BabyDAO {
     @OneToMany(mappedBy = "baby")
     private List<GrowthRecordDAO> growthRecordDAOS;
 
-    public void update(String babyId, String name, String gender, LocalDateTime dateTime, String imageUrl, float birthHeight, float birthWeight) {
-        this.babyId = babyId;
+    public void update(String name, String gender, LocalDateTime dateTime, String imageUrl, float birthHeight, float birthWeight) {
         this.name = name;
         this.gender = gender;
         this.dateTime = dateTime;

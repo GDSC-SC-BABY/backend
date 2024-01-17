@@ -23,7 +23,7 @@ public class SnackController {
     @GetMapping("/Snack")
     public SnackListRes getListSnackList(@RequestParam(value = "pageNo", defaultValue = "0", required = false) Integer pageNo,
                                          @RequestParam(value = "pageSize", defaultValue = "5", required = false) Integer pageSize,
-                                         @RequestParam String babyId) {
+                                         @RequestParam Long babyId) {
         return snackService.getListSnackList(pageNo, pageSize, babyId);
     }
 

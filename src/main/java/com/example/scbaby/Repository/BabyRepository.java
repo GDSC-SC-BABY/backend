@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BabyRepository extends JpaRepository<BabyDAO, String> {
+public interface BabyRepository extends JpaRepository<BabyDAO, Long> {
     //findByBabyId
-    BabyDAO findByBabyId(String babyId);
+    BabyDAO findByBabyId(Long babyId);
 }

@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SnackPostReq {
-    private String babyId;
+    private Long babyId;
     private LocalDateTime dateTime;
     private float amount;
     private String imageUrl;

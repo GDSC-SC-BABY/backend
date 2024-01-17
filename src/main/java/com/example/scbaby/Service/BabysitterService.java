@@ -25,12 +25,12 @@ public class BabysitterService {
     }
 
     @Transactional(readOnly = true)
-    public BabysitterGetRes getBabysitter(Long babysitterId) {
+    public BabysitterGetRes getBabysitter(String babysitterId) {
         return babysitterGetBean.exec(babysitterId);
     }
 
     @Transactional
-    public StateRes updateBabysitter(Long babysitterId, BabysitterUpdateReq babysitterUpdateReq) {
+    public StateRes updateBabysitter(String babysitterId, BabysitterUpdateReq babysitterUpdateReq) {
         return babysitterUpdateBean.exec(babysitterId, babysitterUpdateReq);
     }
 }

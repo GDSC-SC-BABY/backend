@@ -24,13 +24,13 @@ public class BabyController {
 
     @Operation(summary = "BabyId로 Baby 조회")
     @GetMapping("/baby/{babyId}")
-    public BabyGetRes getBaby(@PathVariable String babyId) {
+    public BabyGetRes getBaby(@PathVariable Long babyId) {
         return babyService.getBaby(babyId);
     }
 
     @Operation(summary = "Baby 수정")
     @PatchMapping("/baby/{babyId}")
-    public StateRes updateBaby(@PathVariable String babyId, @RequestBody @Valid BabyUpdateReq babyUpdateReq) {
+    public StateRes updateBaby(@PathVariable Long babyId, @RequestBody @Valid BabyUpdateReq babyUpdateReq) {
         return babyService.updateBaby(babyId, babyUpdateReq);
     }
 }

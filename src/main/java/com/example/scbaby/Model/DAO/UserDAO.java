@@ -22,8 +22,10 @@ public class UserDAO {
     @OneToMany(mappedBy = "user")
     private List<BabyUserLinkDAO> babyUserLinkDAOS;
 
-    private String email;
     private String name;
+
+    private String phoneNumber;
+
     private String residence;
 
 }

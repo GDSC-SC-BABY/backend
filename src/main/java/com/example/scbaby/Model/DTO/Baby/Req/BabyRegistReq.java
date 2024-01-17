@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class BabyRegistReq {
     @NotBlank
-    private String babyId;
+    private Long babyId;
 
     @NotBlank
     private String name;
