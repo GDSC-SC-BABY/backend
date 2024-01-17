@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class BabyGetRes {
 
-    private String babyId;
+    private Long babyId;
 
     private String name;
 

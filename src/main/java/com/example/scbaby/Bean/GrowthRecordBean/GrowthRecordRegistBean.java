@@ -17,7 +17,7 @@ public class GrowthRecordRegistBean {
     private final GrowthRecordRepository growthRecordRepository;
     private final BabyRepository babyRepository;
 
-    public StateRes exec(GrowthRecordRegistReq growthRecordRegistReq, String babyId) {
+    public StateRes exec(GrowthRecordRegistReq growthRecordRegistReq, Long babyId) {
         GrowthRecordDAO growthRecordDAO = growthRecordRegistReq.toDAO();
         BabyDAO babyDAO = babyRepository.findById(babyId).orElseThrow(EntityNotFoundException::new);
         growthRecordDAO.setBaby(babyDAO);

@@ -12,7 +12,7 @@ public class BabysitterGetBean {
 
     private final BabysitterRepository babysitterRepository;
 
-    public BabysitterGetRes exec(Long babysitterId) {
+    public BabysitterGetRes exec(String babysitterId) {
         return BabysitterGetRes.of(babysitterRepository.findById(babysitterId).orElseThrow(EntityNotFoundException::new));
     }
 }

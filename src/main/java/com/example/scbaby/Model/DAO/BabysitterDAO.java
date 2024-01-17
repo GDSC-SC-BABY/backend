@@ -11,8 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 public class BabysitterDAO {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long babysitterId;
+    private String babysitterId;
 
     private String name;
     private String phoneNumber;
@@ -24,7 +23,8 @@ public class BabysitterDAO {
     private Integer wage;
     private String residence;
 
-    public void update(String name, String phoneNumber, String selfIntro, Integer wage, String residence) {
+    public void update(String babysitterId, String name, String phoneNumber, String selfIntro, Integer wage, String residence) {
+        this.babysitterId = babysitterId;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.selfIntro = selfIntro;

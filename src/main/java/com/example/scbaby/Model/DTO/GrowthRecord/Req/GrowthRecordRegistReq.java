@@ -26,7 +26,7 @@ public class GrowthRecordRegistReq {
     @NotNull
     private LocalDateTime dateTime;
 
-    private String babyId;
+    private Long babyId;
 
     public GrowthRecordDAO toDAO() {
         return GrowthRecordDAO.builder()

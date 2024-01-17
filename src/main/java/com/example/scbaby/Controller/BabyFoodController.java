@@ -20,7 +20,7 @@ public class BabyFoodController {
     @GetMapping("/babyFood")
     public BabyFoodListRes getListBabyFoodList(@RequestParam(value = "pageNo", defaultValue = "0", required = false) Integer pageNo,
                                    @RequestParam(value = "pageSize", defaultValue = "5", required = false) Integer pageSize,
-                                   @RequestParam String babyId) {
+                                   @RequestParam Long babyId) {
         return babyFoodService.getListBabyFoodList(pageNo, pageSize, babyId);
     }
 

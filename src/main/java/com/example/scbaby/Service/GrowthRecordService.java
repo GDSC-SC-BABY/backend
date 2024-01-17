@@ -20,12 +20,12 @@ public class GrowthRecordService {
     private final GrowthRecordUpdateBean growthRecordUpdateBean;
 
     @Transactional
-    public StateRes registerGrowthRecord(GrowthRecordRegistReq growthRecordRegistReq, String babyId) {
+    public StateRes registerGrowthRecord(GrowthRecordRegistReq growthRecordRegistReq, Long babyId) {
         return growthRecordRegistBean.exec(growthRecordRegistReq, babyId);
     }
 
     @Transactional(readOnly = true)
-    public PageResponseDto getGrowthRecord(int pageNo, int pageSize, String babyId) {
+    public PageResponseDto getGrowthRecord(int pageNo, int pageSize, Long babyId) {
         return growthRecordGetBean.exec(pageNo, pageSize, babyId);
     }
 

@@ -24,12 +24,12 @@ public class BabyService {
     }
 
     @Transactional(readOnly = true)
-    public BabyGetRes getBaby(String babyId) {
+    public BabyGetRes getBaby(Long babyId) {
         return babyGetBean.exec(babyId);
     }
 
     @Transactional
-    public StateRes updateBaby(String babyId, BabyUpdateReq babyUpdateReq) {
+    public StateRes updateBaby(Long babyId, BabyUpdateReq babyUpdateReq) {
         return babyUpdateBean.exec(babyId, babyUpdateReq);
     }
 }
