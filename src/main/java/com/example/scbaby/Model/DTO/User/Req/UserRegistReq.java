@@ -12,14 +12,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserRegistReq {
     private String userId;
-    private String email;
     private String name;
     private String residence;
 
     public UserDAO toDAO() {
         return UserDAO.builder()
                 .userId(userId)
-                .email(email)
                 .name(name)
                 .residence(residence)
                 .build();
