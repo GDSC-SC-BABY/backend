@@ -38,7 +38,6 @@ public class BabyRegistReq {
 
     public BabyDAO toDAO() {
         return BabyDAO.builder()
-                .babyId(babyId)
                 .name(name)
                 .gender(gender)
                 .dateTime(dateTime)
