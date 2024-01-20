@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class BabyRegistReq {
     @NotBlank
-    private String babyId;
+    private Long babyId;
 
     @NotBlank
     private String name;
@@ -38,7 +38,6 @@ public class BabyRegistReq {
 
     public BabyDAO toDAO() {
         return BabyDAO.builder()
-                .babyId(babyId)
                 .name(name)
                 .gender(gender)
                 .dateTime(dateTime)

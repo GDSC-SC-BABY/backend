@@ -23,7 +23,7 @@ public class GrowthRecordGetBean {
     private final GrowthRecordRepository growthRecordRepository;
     private final BabyRepository babyRepository;
 
-    public PageResponseDto exec(int pageNo, int pageSize, String babyId) {
+    public PageResponseDto exec(int pageNo, int pageSize, Long babyId) {
         Pageable pageable = PageRequest.of(pageNo, pageSize, Sort.by("dateTime").ascending());
         Page<GrowthRecordDAO> growthRecordDAOPage = null;
 

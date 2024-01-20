@@ -25,7 +25,7 @@ public class SnackListGetBean {
     private final SnackRepository snackRepository;
     private final BabyRepository babyRepository;
 
-    public SnackListRes exec(Integer pageNo, Integer pageSize, String babyId) {
+    public SnackListRes exec(Integer pageNo, Integer pageSize, Long babyId) {
         Pageable pageable = PageRequest.of(pageNo, pageSize);
         BabyDAO babyDAO = babyRepository.findByBabyId(babyId);
         Page<SnackDAO> page = snackRepository.findByBaby(pageable, babyDAO);

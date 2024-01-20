@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class BabyGetBean {
     private final BabyRepository babyRepository;
 
-    public BabyGetRes exec(String babyId) {
+    public BabyGetRes exec(Long babyId) {
         return BabyGetRes.of(babyRepository.findById(babyId).orElseThrow(EntityNotFoundException::new));
     }
 }

@@ -27,7 +27,7 @@ public class GrowthRecordController {
     @GetMapping("/growthrecord/{babyId}")
     public PageResponseDto getBaby(@RequestParam(value = "pageNo", defaultValue = "0", required = false) Integer pageNo,
                                    @RequestParam(value = "pageSize", defaultValue = "5", required = false) Integer pageSize,
-                                   @PathVariable String babyId) {
+                                   @PathVariable Long babyId) {
 
         return growthRecordService.getGrowthRecord(pageNo, pageSize, babyId);
     }

@@ -17,7 +17,7 @@ public class BabyFoodService {
     private final BabyFoodGetBean babyFoodGetBean;
     private final BabyFoodPostBean babyFoodPostBean;
 
-    public BabyFoodListRes getListBabyFoodList(Integer pageNo, Integer pageSize, String babyId) {
+    public BabyFoodListRes getListBabyFoodList(Integer pageNo, Integer pageSize, Long babyId) {
         return babyFoodListGetBean.exec(pageNo, pageSize, babyId);
     }
 

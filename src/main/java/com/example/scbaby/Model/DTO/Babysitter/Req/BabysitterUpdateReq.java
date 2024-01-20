@@ -13,6 +13,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BabysitterUpdateReq {
     @NotBlank
+    private String babysitterId;
+    @NotBlank
     private String name;
     @NotBlank
     private String phoneNumber;

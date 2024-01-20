@@ -25,13 +25,13 @@ public class BabysitterController {
 
     @Operation(summary = "BabysitterId로 Babysitter 조회")
     @GetMapping("/babysitter/{babysitterId}")
-    public BabysitterGetRes getBabysitter(@PathVariable Long babysitterId) {
+    public BabysitterGetRes getBabysitter(@PathVariable String babysitterId) {
         return babysitterService.getBabysitter(babysitterId);
     }
 
     @Operation(summary = "Babysitter 수정")
     @PatchMapping("/babysitter/{babysitterId}")
-    public StateRes updateBabysitter(@PathVariable Long babysitterId, @RequestBody @Valid BabysitterUpdateReq babysitterUpdateReq) {
+    public StateRes updateBabysitter(@PathVariable String babysitterId, @RequestBody @Valid BabysitterUpdateReq babysitterUpdateReq) {
         return babysitterService.updateBabysitter(babysitterId, babysitterUpdateReq);
     }
 }

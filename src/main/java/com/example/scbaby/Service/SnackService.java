@@ -23,7 +23,7 @@ public class SnackService {
     private final SnackGetBean snackGetBean;
     private final SnackPostBean snackPostBean;
 
-    public SnackListRes getListSnackList(Integer pageNo, Integer pageSize, String babyId) {
+    public SnackListRes getListSnackList(Integer pageNo, Integer pageSize, Long babyId) {
         return snackListGetBean.exec(pageNo, pageSize, babyId);
     }
 

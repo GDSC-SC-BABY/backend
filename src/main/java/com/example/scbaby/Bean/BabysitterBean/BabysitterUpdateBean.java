@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 public class BabysitterUpdateBean {
     private final BabysitterRepository babysitterRepository;
 
-    public StateRes exec(Long babysitterId, BabysitterUpdateReq babysitterUpdateReq) {
+    public StateRes exec(String babysitterId, BabysitterUpdateReq babysitterUpdateReq) {
         if (babysitterRepository.findById(babysitterId).isPresent()) {
             BabysitterDAO babysitterDAO = babysitterRepository.findById(babysitterId).get();
 
-            babysitterDAO.update(babysitterUpdateReq.getName(), babysitterUpdateReq.getPhoneNumber(), babysitterUpdateReq.getSelfIntro(), babysitterUpdateReq.getWage(), babysitterUpdateReq.getResidence());
+            babysitterDAO.update(babysitterUpdateReq.getBabysitterId(), babysitterUpdateReq.getName(), babysitterUpdateReq.getPhoneNumber(), babysitterUpdateReq.getSelfIntro(), babysitterUpdateReq.getWage(), babysitterUpdateReq.getResidence());
             return new StateRes(true);
         }
         return new StateRes(false);
