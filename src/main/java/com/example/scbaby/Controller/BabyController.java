@@ -28,7 +28,7 @@ public class BabyController {
         return babyService.getBaby(babyId);
     }
 
-    @Operation(summary = "Baby 수정")
+    @Operation(summary = "Baby 수정.")
     @PatchMapping("/baby/{babyId}")
     public StateRes updateBaby(@PathVariable String babyId, @RequestBody @Valid BabyUpdateReq babyUpdateReq) {
         return babyService.updateBaby(babyId, babyUpdateReq);
