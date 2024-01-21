@@ -27,14 +27,12 @@ jobs:
         arguments: build
     - uses: actions/checkout@v4
   
-    - name: Copy files via SCP
-      uses: appleboy/scp-action@master
+    - name: Build and upload artifact
+      uses: actions/upload-artifact@v2
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
-        source: "build/libs/*" # 또는 해당 파일 경로
-        target: "/home/woojin020605" # 원하는 타겟 디렉토리
+        name: built-jar
+        path: build/libs/*.jar
+
 
     
     - name: executing remote ssh commands using ssh key
