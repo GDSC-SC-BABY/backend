@@ -30,6 +30,12 @@ jobs:
     - name: Create key.pem
       run: |
         echo "${{ secrets.SSH_KEY }}" > ./key.pem
+
+    - name: Add SSH key to known_hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan -t rsa ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+
   
     - name: file Send
       run: |
