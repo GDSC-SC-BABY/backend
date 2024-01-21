@@ -45,6 +45,7 @@ jobs:
       run: |
           ls -al
           scp -i "./key.pem" -r build/libs/* woojin020605@${{ secrets.HOST }}:/home/woojin020605
+    - uses: actions/checkout@v4
 
 
     
