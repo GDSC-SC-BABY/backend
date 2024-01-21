@@ -32,8 +32,7 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
+        key: ${{ secrets.SSH_KEY }}
         source: "build/libs/*.jar"
         target: home/woojin020605/app.jar
     
