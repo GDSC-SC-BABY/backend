@@ -1,19 +1,22 @@
-steps:
-  - name: docker/compose:1.29.0
-    args:
-      - -f
-      - docker-compose.prod.yaml
-      - build
-  
-  - name: docker/compose:1.29.0
-    args:
-      - -f
-      - docker-compose.prod.yaml
-      - push
-  
-  - name: gcr.io/cloud-builders/kubectl
-    args:
-      - set
-      - image
-      - deployment/snsteam-backend-api-resource
-      - team-sha256-1=asia.gcr.io/evocative-tube-352516/team:2.5.0
+name: CICD-SSH
+on:
+  push:
+      branches: [ main ]
+      paths:
+        - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }} 
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: 22
+        script: |
+            cd ${{ github.event.repository.name }}
+            pwd
+            sh deploy-ssh.sh
