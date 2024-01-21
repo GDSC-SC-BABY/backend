@@ -31,6 +31,11 @@ jobs:
       run: |
         echo "${{ secrets.SSH_KEY }}" > ./key.pem
 
+    - name: Setup SSH Key
+      run: |
+        chmod 600 ./key.pem
+
+
     - name: Add SSH key to known_hosts
       run: |
         mkdir -p ~/.ssh
