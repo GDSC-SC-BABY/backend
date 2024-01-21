@@ -18,6 +18,7 @@ public class BabyFoodPostReq {
     private float amount;
     private String imageUrl;
     private String specialNote;
+    
     private List<BasePorridge> basePorridgeList;
     private List<Topping> toppingList;
 
