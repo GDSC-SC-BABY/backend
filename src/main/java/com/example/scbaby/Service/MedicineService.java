@@ -1,9 +1,9 @@
 package com.example.scbaby.Service;
 
-import com.example.scbaby.Bean.Medicine.MedicineDeleteBean;
-import com.example.scbaby.Bean.Medicine.MedicineGetBean;
-import com.example.scbaby.Bean.Medicine.MedicineRegistBean;
-import com.example.scbaby.Bean.Medicine.MedicineUpdateBean;
+import com.example.scbaby.Bean.MedicineBean.MedicineDeleteBean;
+import com.example.scbaby.Bean.MedicineBean.MedicineGetBean;
+import com.example.scbaby.Bean.MedicineBean.MedicineRegistBean;
+import com.example.scbaby.Bean.MedicineBean.MedicineUpdateBean;
 import com.example.scbaby.Model.DTO.Medicine.Req.MedicineRegistReq;
 import com.example.scbaby.Model.DTO.Medicine.Req.MedicineUpdateReq;
 import com.example.scbaby.Model.DTO.Medicine.Res.MedicineGetRes;
