@@ -23,7 +23,7 @@ public class SleepController {
         return sleepService.registerSleep(sleepRegistReq, sleepRegistReq.getBabyId());
     }
 
-    @Operation(summary = "BabyId로 Sleep List 조회")
+    @Operation(summary = "Sleep 조회")
     @GetMapping("/sleep/{sleepId}")
     public SleepGetRes getSleepList(@PathVariable Long sleepId) {
         return sleepService.getSleep(sleepId);
@@ -35,7 +35,7 @@ public class SleepController {
         return sleepService.updateSleep(sleepId, sleepUpdateReq);
     }
 
-    @Operation(summary = "BabyId로 Sleep List 조회")
+    @Operation(summary = "Sleep 삭제")
     @DeleteMapping("/sleep/{sleepId}")
     public StateRes deleteSleep(@PathVariable Long sleepId) {
         return sleepService.deleteSleep(sleepId);

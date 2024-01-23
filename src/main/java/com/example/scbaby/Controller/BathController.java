@@ -23,7 +23,7 @@ public class BathController {
         return bathService.registerBath(bathRegistReq, bathRegistReq.getBabyId());
     }
 
-    @Operation(summary = "BabyId로 Bath 조회")
+    @Operation(summary = "Bath 조회")
     @GetMapping("/bath/{bathId}")
     public BathGetRes getBathList(@PathVariable Long bathId) {
         return bathService.getBath(bathId);
