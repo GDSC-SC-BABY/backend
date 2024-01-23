@@ -1,4 +1,4 @@
-package com.example.scbaby.Bean.Medicine;
+package com.example.scbaby.Bean.MedicineBean;
 
 import com.example.scbaby.Model.DAO.MedicineDAO;
 import com.example.scbaby.Model.DTO.StateRes;

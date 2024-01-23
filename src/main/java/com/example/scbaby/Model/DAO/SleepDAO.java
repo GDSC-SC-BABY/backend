@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SleepDAO {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sleepId;

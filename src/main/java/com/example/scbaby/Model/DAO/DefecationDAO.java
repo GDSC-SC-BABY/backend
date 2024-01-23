@@ -6,16 +6,16 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "bath")
+@Table(name = "defeaction")
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BathDAO {
+public class DefecationDAO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long bathId;
+    private Long defecationId;
 
     @ManyToOne
     @JoinColumn(name = "baby_id")
@@ -24,15 +24,14 @@ public class BathDAO {
     // 기록 시작 시간
     private LocalDateTime startTime;
 
-    // 기록 종료 시간
-    private LocalDateTime endTime;
+    private String defecationStatus;
 
     private String memo;
 
-    public void update(BabyDAO baby, LocalDateTime startTime, LocalDateTime endTime, String memo) {
+    public void update(BabyDAO baby, LocalDateTime startTime, String defecationStatus, String memo) {
         this.baby = baby;
         this.startTime = startTime;
-        this.endTime = endTime;
+        this.defecationStatus = defecationStatus;
         this.memo = memo;
     }
 }
