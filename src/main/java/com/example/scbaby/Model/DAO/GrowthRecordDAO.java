@@ -28,7 +28,8 @@ public class GrowthRecordDAO {
     //기록 날짜
     private LocalDateTime dateTime;
 
-    public void update(float height, float weight, float headSize, LocalDateTime dateTime) {
+    public void update(BabyDAO babyDAO, float height, float weight, float headSize, LocalDateTime dateTime) {
+        this.baby = babyDAO;
         this.height = height;
         this.weight = weight;
         this.headSize = headSize;

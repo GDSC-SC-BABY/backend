@@ -14,6 +14,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GrowthRecordRegistReq {
+
+    @NotNull
+    private Long babyId;
+
     @NotNull
     private float height;
 
@@ -26,7 +30,6 @@ public class GrowthRecordRegistReq {
     @NotNull
     private LocalDateTime dateTime;
 
-    private Long babyId;
 
     public GrowthRecordDAO toDAO() {
         return GrowthRecordDAO.builder()

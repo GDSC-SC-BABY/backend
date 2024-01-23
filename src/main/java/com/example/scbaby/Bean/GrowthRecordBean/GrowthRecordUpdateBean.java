@@ -4,6 +4,7 @@ import com.example.scbaby.Model.DAO.GrowthRecordDAO;
 import com.example.scbaby.Model.DTO.GrowthRecord.Req.GrowthRecordUpdateReq;
 import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Repository.GrowthRecordRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -14,12 +15,14 @@ public class GrowthRecordUpdateBean {
     private final GrowthRecordRepository growthRecordRepository;
 
     public StateRes exec(Long growthRecordId, GrowthRecordUpdateReq growthRecordUpdateReq) {
-        if (growthRecordRepository.findById(growthRecordId).isPresent()) {
-            GrowthRecordDAO growthRecordDAO = growthRecordRepository.findById(growthRecordId).get();
+            GrowthRecordDAO growthRecordDAO = growthRecordRepository.findById(growthRecordId).orElseThrow(EntityNotFoundException::new);
 
-            growthRecordDAO.update(growthRecordUpdateReq.getHeight(), growthRecordUpdateReq.getWeight(), growthRecordUpdateReq.getHeadSize(), growthRecordUpdateReq.getDateTime());
+            growthRecordDAO.update(growthRecordDAO.getBaby(),
+                                    growthRecordUpdateReq.getHeight(),
+                                    growthRecordUpdateReq.getWeight(),
+                                    growthRecordUpdateReq.getHeadSize(),
+                                    growthRecordUpdateReq.getDateTime());
+
             return new StateRes(true);
         }
-        return new StateRes(false);
-    }
 }

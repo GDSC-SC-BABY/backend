@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PageResponseDto {
 
-    private List<GrowthRecordGetRes> content;
+    private List<GrowthRecordListRes> content;
     private int pageNo;
     private int pageSize;
     private long totalElements;
