@@ -2,6 +2,7 @@ package com.example.scbaby.Model.DTO.Medicine.Req;
 
 import com.example.scbaby.Model.DAO.MedicineDAO;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class MedicineRegistReq {
     @NotNull
+    @PastOrPresent
     private LocalDateTime startTime;
 
     @NotNull
