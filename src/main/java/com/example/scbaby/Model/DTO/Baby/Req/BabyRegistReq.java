@@ -3,6 +3,7 @@ package com.example.scbaby.Model.DTO.Baby.Req;
 import com.example.scbaby.Model.DAO.BabyDAO;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class BabyRegistReq {
     private String gender;
 
     @NotNull
+    @PastOrPresent
     private LocalDateTime dateTime;
 
     @NotBlank
