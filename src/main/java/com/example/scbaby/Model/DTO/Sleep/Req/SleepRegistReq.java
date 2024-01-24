@@ -2,6 +2,7 @@ package com.example.scbaby.Model.DTO.Sleep.Req;
 
 import com.example.scbaby.Model.DAO.SleepDAO;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,9 +16,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class SleepRegistReq {
     @NotNull
+    @PastOrPresent
     private LocalDateTime startTime;
 
     @NotNull
+    @PastOrPresent
     private LocalDateTime endTime;
 
     private String memo;
