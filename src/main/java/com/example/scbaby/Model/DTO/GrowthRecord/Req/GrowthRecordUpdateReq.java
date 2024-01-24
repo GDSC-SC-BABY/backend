@@ -1,6 +1,7 @@
 package com.example.scbaby.Model.DTO.GrowthRecord.Req;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,5 +25,6 @@ public class GrowthRecordUpdateReq {
     private float headSize;
 
     @NotNull
+    @PastOrPresent
     private LocalDateTime dateTime;
 }
