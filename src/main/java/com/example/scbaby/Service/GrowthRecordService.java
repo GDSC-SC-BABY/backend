@@ -1,6 +1,6 @@
 package com.example.scbaby.Service;
 
-import com.example.scbaby.Bean.GrowthRecordBean.GrowthRecordGetBean;
+import com.example.scbaby.Bean.GrowthRecordBean.GrowthRecordListBean;
 import com.example.scbaby.Bean.GrowthRecordBean.GrowthRecordRegistBean;
 import com.example.scbaby.Bean.GrowthRecordBean.GrowthRecordUpdateBean;
 import com.example.scbaby.Model.DTO.GrowthRecord.Req.GrowthRecordRegistReq;
@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class GrowthRecordService {
 
     private final GrowthRecordRegistBean growthRecordRegistBean;
-    private final GrowthRecordGetBean growthRecordGetBean;
+    private final GrowthRecordListBean growthRecordListBean;
     private final GrowthRecordUpdateBean growthRecordUpdateBean;
 
     @Transactional
@@ -25,8 +25,8 @@ public class GrowthRecordService {
     }
 
     @Transactional(readOnly = true)
-    public PageResponseDto getGrowthRecord(int pageNo, int pageSize, Long babyId) {
-        return growthRecordGetBean.exec(pageNo, pageSize, babyId);
+    public PageResponseDto getGrowthRecordList(int pageNo, int pageSize, Long babyId) {
+        return growthRecordListBean.exec(pageNo, pageSize, babyId);
     }
 
     @Transactional

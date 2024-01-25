@@ -2,6 +2,7 @@ package com.example.scbaby.Model.DTO.GrowthRecord.Req;
 
 import com.example.scbaby.Model.DAO.GrowthRecordDAO;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,6 +15,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GrowthRecordRegistReq {
+
+    @NotNull
+    private Long babyId;
+
     @NotNull
     private float height;
 
@@ -24,9 +29,9 @@ public class GrowthRecordRegistReq {
     private float headSize;
 
     @NotNull
+    @PastOrPresent
     private LocalDateTime dateTime;
 
-    private Long babyId;
 
     public GrowthRecordDAO toDAO() {
         return GrowthRecordDAO.builder()

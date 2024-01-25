@@ -3,6 +3,7 @@ package com.example.scbaby.Model.DTO.Baby.Req;
 import com.example.scbaby.Model.DAO.BabyDAO;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,15 +17,13 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class BabyRegistReq {
     @NotBlank
-    private Long babyId;
-
-    @NotBlank
     private String name;
 
     @NotBlank
     private String gender;
 
     @NotNull
+    @PastOrPresent
     private LocalDateTime dateTime;
 
     @NotBlank

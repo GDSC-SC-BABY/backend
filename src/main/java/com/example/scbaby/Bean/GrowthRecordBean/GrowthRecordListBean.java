@@ -2,7 +2,7 @@ package com.example.scbaby.Bean.GrowthRecordBean;
 
 import com.example.scbaby.Model.DAO.BabyDAO;
 import com.example.scbaby.Model.DAO.GrowthRecordDAO;
-import com.example.scbaby.Model.DTO.GrowthRecord.Res.GrowthRecordGetRes;
+import com.example.scbaby.Model.DTO.GrowthRecord.Res.GrowthRecordListRes;
 import com.example.scbaby.Model.DTO.GrowthRecord.Res.PageResponseDto;
 import com.example.scbaby.Repository.BabyRepository;
 import com.example.scbaby.Repository.GrowthRecordRepository;
@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
-public class GrowthRecordGetBean {
+public class GrowthRecordListBean {
 
     private final GrowthRecordRepository growthRecordRepository;
     private final BabyRepository babyRepository;
@@ -34,8 +34,8 @@ public class GrowthRecordGetBean {
 
         List<GrowthRecordDAO> growthRecordDAOList = growthRecordDAOPage.getContent();
 
-        List<GrowthRecordGetRes> content = growthRecordDAOList.stream()
-                .map(growthRecordDAO -> GrowthRecordGetRes.builder()
+        List<GrowthRecordListRes> content = growthRecordDAOList.stream()
+                .map(growthRecordDAO -> GrowthRecordListRes.builder()
                         .height(growthRecordDAO.getHeight())
                         .weight(growthRecordDAO.getWeight())
                         .headSize(growthRecordDAO.getHeadSize())

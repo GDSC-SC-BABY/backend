@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class GrowthRecordGetRes {
+public class GrowthRecordListRes {
     private float height;
     private float weight;
     private float headSize;
