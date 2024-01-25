@@ -1,4 +1,4 @@
-package com.example.scbaby.Model.DTO.GrowthRecord.Req;
+package com.example.scbaby.Model.DTO.Sleep.Req;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
@@ -13,18 +13,15 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class GrowthRecordUpdateReq {
-
-    @NotNull
-    private float height;
-
-    @NotNull
-    private float weight;
-
-    @NotNull
-    private float headSize;
+public class SleepUpdateReq {
 
     @NotNull
     @PastOrPresent
-    private LocalDateTime dateTime;
+    private LocalDateTime startTime;
+
+    @NotNull
+    @PastOrPresent
+    private LocalDateTime endTime;
+
+    private String memo;
 }

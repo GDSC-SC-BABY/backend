@@ -23,13 +23,13 @@ public class GrowthRecordController {
         return growthRecordService.registerGrowthRecord(growthRecordRegistReq, growthRecordRegistReq.getBabyId());
     }
 
-    @Operation(summary = "BabyId로 GrowthRecord 조회")
+    @Operation(summary = "BabyId로 GrowthRecord List 조회")
     @GetMapping("/growthrecord/{babyId}")
     public PageResponseDto getBaby(@RequestParam(value = "pageNo", defaultValue = "0", required = false) Integer pageNo,
                                    @RequestParam(value = "pageSize", defaultValue = "5", required = false) Integer pageSize,
                                    @PathVariable Long babyId) {
 
-        return growthRecordService.getGrowthRecord(pageNo, pageSize, babyId);
+        return growthRecordService.getGrowthRecordList(pageNo, pageSize, babyId);
     }
 
     @Operation(summary = "GrowthRecord 수정")

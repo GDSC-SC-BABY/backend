@@ -42,6 +42,18 @@ public class BabyDAO {
     @OneToMany(mappedBy = "baby")
     private List<GrowthRecordDAO> growthRecordDAOS;
 
+    @OneToMany(mappedBy = "baby")
+    private List<SleepDAO> sleepDAOS;
+
+    @OneToMany(mappedBy = "baby")
+    private List<BathDAO> bathDAOS;
+
+    @OneToMany(mappedBy = "baby")
+    private List<MedicineDAO> medicineDAOS;
+
+    @OneToMany(mappedBy = "baby")
+    private List<DefecationDAO> defecationDAOS;
+
     public void update(String name, String gender, LocalDateTime dateTime, String imageUrl, float birthHeight, float birthWeight) {
         this.name = name;
         this.gender = gender;
