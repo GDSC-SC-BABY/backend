@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class BathRegistBean {
-
     private final BathRepository bathRepository;
     private final BabyRepository babyRepository;
 

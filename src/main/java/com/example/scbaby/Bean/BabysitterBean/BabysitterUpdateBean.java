@@ -4,11 +4,11 @@ import com.example.scbaby.Model.DAO.BabysitterDAO;
 import com.example.scbaby.Model.DTO.Babysitter.Req.BabysitterUpdateReq;
 import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Repository.BabysitterRepository;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BabysitterUpdateBean {
     private final BabysitterRepository babysitterRepository;
 

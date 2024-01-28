@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class BathController {
-
     private final BathService bathService;
 
     @Operation(summary = "생활패턴에 Bath 등록")

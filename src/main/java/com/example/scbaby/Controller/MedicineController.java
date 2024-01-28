@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class MedicineController {
-
     private final MedicineService medicineService;
 
     @Operation(summary = "생활패턴에 Medicine 등록")

@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class DefecationRegistBean {
-
     private final DefecationRepository defecationRepository;
     private final BabyRepository babyRepository;
 

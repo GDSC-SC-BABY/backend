@@ -13,10 +13,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class ActivityController {
-
     private final ActivityService activityService;
 
-    @Operation(summary = "Baby 등록")
+    @Operation(summary = "생활패턴 전체 조회")
     @GetMapping("/activity/{babyId}")
     public List<ActivityListGetRes> getBabyActivityListByBabyIdAndDate(@PathVariable Long babyId, @RequestParam String date) {
         LocalDate specificDate = LocalDate.parse(date);

@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 @Component
 @RequiredArgsConstructor
 public class GrowthRecordListBean {
-
     private final GrowthRecordRepository growthRecordRepository;
     private final BabyRepository babyRepository;
 

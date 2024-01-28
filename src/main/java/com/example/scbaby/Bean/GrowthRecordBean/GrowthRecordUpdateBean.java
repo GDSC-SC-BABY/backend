@@ -5,13 +5,12 @@ import com.example.scbaby.Model.DTO.GrowthRecord.Req.GrowthRecordUpdateReq;
 import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Repository.GrowthRecordRepository;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class GrowthRecordUpdateBean {
-
     private final GrowthRecordRepository growthRecordRepository;
 
     public StateRes exec(Long growthRecordId, GrowthRecordUpdateReq growthRecordUpdateReq) {

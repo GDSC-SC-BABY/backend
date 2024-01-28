@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class SleepRegistBean {
-
     private final SleepRepository sleepRepository;
     private final BabyRepository babyRepository;
 

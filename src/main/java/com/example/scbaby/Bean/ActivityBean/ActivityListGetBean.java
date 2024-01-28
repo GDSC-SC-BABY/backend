@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 @Component
 @RequiredArgsConstructor
 public class ActivityListGetBean {
-
     private final BabyRepository babyRepository;
     private final SleepRepository sleepRepository;
     private final BathRepository bathRepository;
