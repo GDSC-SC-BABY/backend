@@ -7,13 +7,12 @@ import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Repository.BabyRepository;
 import com.example.scbaby.Repository.GrowthRecordRepository;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class GrowthRecordRegistBean {
-
     private final GrowthRecordRepository growthRecordRepository;
     private final BabyRepository babyRepository;
 

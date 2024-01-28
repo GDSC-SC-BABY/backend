@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 @Component
 @AllArgsConstructor
 public class MedicineUpdateBean {
-
     private final MedicineRepository medicineRepository;
 
     public StateRes exec(Long medicineId, MedicineUpdateReq medicineUpdateReq) {

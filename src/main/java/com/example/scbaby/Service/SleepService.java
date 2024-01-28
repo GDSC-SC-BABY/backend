@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 public class SleepService {
-
     private final SleepRegistBean sleepRegistBean;
     private final SleepGetBean sleepGetBean;
     private final SleepUpdateBean sleepUpdateBean;

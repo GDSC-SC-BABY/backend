@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class BabysitterGetBean {
-
     private final BabysitterRepository babysitterRepository;
 
     public BabysitterGetRes exec(String babysitterId) {

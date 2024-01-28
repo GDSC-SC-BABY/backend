@@ -26,9 +26,6 @@ public class BabyRegistReq {
     @PastOrPresent
     private LocalDateTime dateTime;
 
-    @NotBlank
-    private String imageUrl;
-
     @NotNull
     private float birthHeight;
 
@@ -40,7 +37,6 @@ public class BabyRegistReq {
                 .name(name)
                 .gender(gender)
                 .dateTime(dateTime)
-                .imageUrl(imageUrl)
                 .birthHeight(birthHeight)
                 .birthWeight(birthWeight)
                 .build();

@@ -17,7 +17,7 @@ public class SleepDAO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sleepId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "baby_id")
     private BabyDAO baby;
 

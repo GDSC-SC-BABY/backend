@@ -6,9 +6,11 @@ import com.example.scbaby.Model.DTO.Baby.Res.BabyGetRes;
 import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Service.BabyService;
 import io.swagger.v3.oas.annotations.Operation;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,8 +20,9 @@ public class BabyController {
 
     @Operation(summary = "Baby 등록")
     @PostMapping("/baby")
-    public StateRes registerUser(@RequestBody @Valid BabyRegistReq babyRegistReq) {
-        return babyService.registerBaby(babyRegistReq);
+    public StateRes registerUser(@RequestPart BabyRegistReq babyRegistReq,
+                                 @RequestPart MultipartFile multipartFile) throws IOException {
+        return babyService.registerBaby(babyRegistReq, multipartFile);
     }
 
     @Operation(summary = "BabyId로 Baby 조회")
@@ -30,7 +33,7 @@ public class BabyController {
 
     @Operation(summary = "Baby 수정")
     @PatchMapping("/baby/{babyId}")
-    public StateRes updateBaby(@PathVariable Long babyId, @RequestBody @Valid BabyUpdateReq babyUpdateReq) {
-        return babyService.updateBaby(babyId, babyUpdateReq);
+    public StateRes updateBaby(@PathVariable Long babyId, @RequestPart BabyUpdateReq babyUpdateReq, @RequestPart MultipartFile multipartFile) throws IOException {
+        return babyService.updateBaby(babyId, babyUpdateReq, multipartFile);
     }
 }

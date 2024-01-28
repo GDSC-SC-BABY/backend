@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class DefecationController {
-
     private final DefecationService defecationService;
 
     @Operation(summary = "생활패턴에 Defecation 등록")

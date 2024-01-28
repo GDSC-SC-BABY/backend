@@ -3,11 +3,11 @@ package com.example.scbaby.Bean.BabysitterBean;
 import com.example.scbaby.Model.DTO.Babysitter.Req.BabysitterRegistReq;
 import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Repository.BabysitterRepository;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BabysitterRegistBean {
     private final BabysitterRepository babysitterRepository;
 

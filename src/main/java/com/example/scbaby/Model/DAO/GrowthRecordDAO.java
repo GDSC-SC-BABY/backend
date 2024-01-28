@@ -17,7 +17,7 @@ public class GrowthRecordDAO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long growthRecordId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "baby_id")
     private BabyDAO baby;
 

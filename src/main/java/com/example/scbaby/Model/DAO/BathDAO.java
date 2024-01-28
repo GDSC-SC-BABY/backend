@@ -17,7 +17,7 @@ public class BathDAO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bathId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "baby_id")
     private BabyDAO baby;
 

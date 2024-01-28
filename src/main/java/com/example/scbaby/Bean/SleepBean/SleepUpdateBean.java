@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 @Component
 @AllArgsConstructor
 public class SleepUpdateBean {
-
     private final SleepRepository sleepRepository;
 
     public StateRes exec(Long sleepId, SleepUpdateReq sleepUpdateReq) {

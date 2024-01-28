@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class MedicineRegistBean {
-
     private final MedicineRepository medicineRepository;
     private final BabyRepository babyRepository;
 

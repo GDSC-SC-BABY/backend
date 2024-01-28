@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class BabysitterController {
-
     private final BabysitterService babysitterService;
 
     @Operation(summary = "Babysitter 등록")
