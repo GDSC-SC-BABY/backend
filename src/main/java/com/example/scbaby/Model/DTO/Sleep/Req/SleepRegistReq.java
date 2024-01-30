@@ -1,5 +1,6 @@
 package com.example.scbaby.Model.DTO.Sleep.Req;
 
+import com.example.scbaby.Model.DAO.BabyDAO;
 import com.example.scbaby.Model.DAO.SleepDAO;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
@@ -27,11 +28,12 @@ public class SleepRegistReq {
 
     private Long babyId;
 
-    public SleepDAO toDAO() {
+    public SleepDAO toDAO(BabyDAO babyDAO) {
         return SleepDAO.builder()
                 .startTime(startTime)
                 .endTime(endTime)
                 .memo(memo)
+                .baby(babyDAO)
                 .build();
     }
 }

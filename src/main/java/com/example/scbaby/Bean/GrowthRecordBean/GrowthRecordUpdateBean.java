@@ -16,12 +16,7 @@ public class GrowthRecordUpdateBean {
     public StateRes exec(Long growthRecordId, GrowthRecordUpdateReq growthRecordUpdateReq) {
             GrowthRecordDAO growthRecordDAO = growthRecordRepository.findById(growthRecordId).orElseThrow(EntityNotFoundException::new);
 
-            growthRecordDAO.update(growthRecordDAO.getBaby(),
-                                    growthRecordUpdateReq.getHeight(),
-                                    growthRecordUpdateReq.getWeight(),
-                                    growthRecordUpdateReq.getHeadSize(),
-                                    growthRecordUpdateReq.getDateTime());
-
+            growthRecordDAO.update(growthRecordUpdateReq);
             return new StateRes(true);
         }
 }

@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SleepGetRes {
+    private Long sleepId;
     private LocalDateTime startTime;
 
     private LocalDateTime endTime;
@@ -21,6 +22,7 @@ public class SleepGetRes {
 
     public static SleepGetRes of(SleepDAO sleepDAO) {
         return SleepGetRes.builder()
+                .sleepId(sleepDAO.getSleepId())
                 .startTime(sleepDAO.getStartTime())
                 .endTime(sleepDAO.getEndTime())
                 .memo(sleepDAO.getMemo())

@@ -17,9 +17,8 @@ public class SleepRegistBean {
     private final BabyRepository babyRepository;
 
     public StateRes exec(SleepRegistReq sleepRegistReq, Long babyId) {
-        SleepDAO sleepDAO = sleepRegistReq.toDAO();
         BabyDAO babyDAO = babyRepository.findById(babyId).orElseThrow(EntityNotFoundException::new);
-        sleepDAO.setBaby(babyDAO);
+        SleepDAO sleepDAO = sleepRegistReq.toDAO(babyDAO);
 
         sleepRepository.save(sleepDAO);
         return new StateRes(true);

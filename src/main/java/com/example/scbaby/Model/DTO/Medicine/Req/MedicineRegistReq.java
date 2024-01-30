@@ -1,5 +1,6 @@
 package com.example.scbaby.Model.DTO.Medicine.Req;
 
+import com.example.scbaby.Model.DAO.BabyDAO;
 import com.example.scbaby.Model.DAO.MedicineDAO;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
@@ -26,11 +27,12 @@ public class MedicineRegistReq {
 
     private Long babyId;
 
-    public MedicineDAO toDAO() {
+    public MedicineDAO toDAO(BabyDAO babyDAO) {
         return MedicineDAO.builder()
                 .startTime(startTime)
                 .medicineType(medicineType)
                 .memo(memo)
+                .baby(babyDAO)
                 .build();
     }
 }

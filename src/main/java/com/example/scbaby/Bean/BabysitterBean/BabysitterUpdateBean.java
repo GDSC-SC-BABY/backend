@@ -16,7 +16,7 @@ public class BabysitterUpdateBean {
         if (babysitterRepository.findById(babysitterId).isPresent()) {
             BabysitterDAO babysitterDAO = babysitterRepository.findById(babysitterId).get();
 
-            babysitterDAO.update(babysitterUpdateReq.getBabysitterId(), babysitterUpdateReq.getName(), babysitterUpdateReq.getPhoneNumber(), babysitterUpdateReq.getSelfIntro(), babysitterUpdateReq.getWage(), babysitterUpdateReq.getResidence());
+            babysitterDAO.update(babysitterUpdateReq);
             return new StateRes(true);
         }
         return new StateRes(false);

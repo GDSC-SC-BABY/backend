@@ -13,41 +13,51 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
-public class ImageUploadBean {
+public class ImageListUploadBean {
     @Value("${spring.cloud.gcp.storage.credentials.location}")
     private String keyFileName;
 
     @Value("${spring.cloud.gcp.storage.bucket}")
     private String bucketName;
 
-    public String exec(MultipartFile multipartFile) throws IOException {
-        if (multipartFile.isEmpty()) {
-            return null;
-        }
-
+    public List<String> exec(List<MultipartFile> multipartFiles) throws IOException {
         InputStream keyFile = ResourceUtils.getURL(keyFileName).openStream();
-
-        String uuid = UUID.randomUUID().toString();
-        String ext = multipartFile.getContentType();
 
         Storage storage = StorageOptions.newBuilder()
                 .setCredentials(GoogleCredentials.fromStream(keyFile))
                 .build()
                 .getService();
 
-        return uploadImageToStorage(storage, multipartFile, uuid, ext);
+        return multipartFiles.stream()
+                .map(multipartFile -> uploadImageToStorage(storage, multipartFile))
+                .collect(Collectors.toList());
     }
 
-    private String uploadImageToStorage(Storage storage, MultipartFile multipartFile, String uuid, String ext) throws IOException {
-        BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, uuid)
-                .setContentType(ext).build();
+    private String uploadImageToStorage(Storage storage, MultipartFile multipartFile) {
+        if (multipartFile.isEmpty()) {
+            return null;
+        }
 
-        Blob blob = storage.create(blobInfo, multipartFile.getInputStream());
+        try {
+            String uuid = UUID.randomUUID().toString();
+            String ext = multipartFile.getContentType();
 
-        return "https://storage.googleapis.com/" + bucketName + "/" + uuid;
+            BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, uuid)
+                    .setContentType(ext).build();
+
+            Blob blob = storage.create(blobInfo, multipartFile.getInputStream());
+
+            return "https://storage.googleapis.com/" + bucketName + "/" + uuid;
+        } catch (IOException e) {
+            // Handle exception or log error
+            e.printStackTrace();
+            return null;
+        }
     }
 }

@@ -16,11 +16,7 @@ public class MedicineUpdateBean {
     public StateRes exec(Long medicineId, MedicineUpdateReq medicineUpdateReq) {
             MedicineDAO MedicineDAO = medicineRepository.findById(medicineId).orElseThrow(EntityNotFoundException::new);
 
-            MedicineDAO.update(MedicineDAO.getBaby(),
-                                    medicineUpdateReq.getStartTime(),
-                                    medicineUpdateReq.getMedicineType(),
-                                    medicineUpdateReq.getMemo());
-
+            MedicineDAO.update(medicineUpdateReq);
             return new StateRes(true);
         }
 }

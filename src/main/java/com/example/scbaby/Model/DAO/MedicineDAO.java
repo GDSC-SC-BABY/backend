@@ -1,5 +1,6 @@
 package com.example.scbaby.Model.DAO;
 
+import com.example.scbaby.Model.DTO.Medicine.Req.MedicineUpdateReq;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,7 +9,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "medicine")
 @Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,10 +28,9 @@ public class MedicineDAO {
 
     private String memo;
 
-    public void update(BabyDAO baby, LocalDateTime startTime, String medicineType, String memo) {
-        this.baby = baby;
-        this.startTime = startTime;
-        this.medicineType = medicineType;
-        this.memo = memo;
+    public void update(MedicineUpdateReq medicineUpdateReq) {
+        this.startTime = medicineUpdateReq.getStartTime();
+        this.medicineType = medicineUpdateReq.getMedicineType();
+        this.memo = medicineUpdateReq.getMemo();
     }
 }
