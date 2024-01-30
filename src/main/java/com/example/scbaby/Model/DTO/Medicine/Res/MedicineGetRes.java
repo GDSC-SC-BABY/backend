@@ -13,6 +13,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MedicineGetRes {
+    private Long medicineId;
+
     private LocalDateTime startTime;
 
     private String medicineType;
@@ -21,6 +23,7 @@ public class MedicineGetRes {
 
     public static MedicineGetRes of(MedicineDAO medicineDAO) {
         return MedicineGetRes.builder()
+                .medicineId(medicineDAO.getMedicineId())
                 .startTime(medicineDAO.getStartTime())
                 .medicineType(medicineDAO.getMedicineType())
                 .memo(medicineDAO.getMemo())

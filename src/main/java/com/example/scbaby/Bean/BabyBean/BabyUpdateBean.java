@@ -26,7 +26,7 @@ public class BabyUpdateBean {
                 imgUrl = imageUploadBean.exec(multipartFile);
             }
 
-            babyDAO.update(babyUpdateReq.getName(), babyUpdateReq.getGender(), babyUpdateReq.getDateTime(), imgUrl, babyUpdateReq.getBirthHeight(), babyUpdateReq.getBirthWeight());
+            babyDAO.update(babyUpdateReq, imgUrl);
             return new StateRes(true);
         }
         return new StateRes(false);

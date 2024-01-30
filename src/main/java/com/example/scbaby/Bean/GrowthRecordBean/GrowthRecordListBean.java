@@ -35,6 +35,7 @@ public class GrowthRecordListBean {
 
         List<GrowthRecordListRes> content = growthRecordDAOList.stream()
                 .map(growthRecordDAO -> GrowthRecordListRes.builder()
+                        .growthRecordId(growthRecordDAO.getGrowthRecordId())
                         .height(growthRecordDAO.getHeight())
                         .weight(growthRecordDAO.getWeight())
                         .headSize(growthRecordDAO.getHeadSize())

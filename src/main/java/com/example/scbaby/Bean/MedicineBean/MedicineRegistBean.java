@@ -17,9 +17,8 @@ public class MedicineRegistBean {
     private final BabyRepository babyRepository;
 
     public StateRes exec(MedicineRegistReq medicineRegistReq, Long babyId) {
-        MedicineDAO medicineDAO = medicineRegistReq.toDAO();
         BabyDAO babyDAO = babyRepository.findById(babyId).orElseThrow(EntityNotFoundException::new);
-        medicineDAO.setBaby(babyDAO);
+        MedicineDAO medicineDAO = medicineRegistReq.toDAO(babyDAO);
 
         medicineRepository.save(medicineDAO);
         return new StateRes(true);

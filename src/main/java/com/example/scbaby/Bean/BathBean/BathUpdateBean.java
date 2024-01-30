@@ -16,11 +16,7 @@ public class BathUpdateBean {
     public StateRes exec(Long bathId, BathUpdateReq bathUpdateReq) {
             BathDAO bathDAO = bathRepository.findById(bathId).orElseThrow(EntityNotFoundException::new);
 
-            bathDAO.update(bathDAO.getBaby(),
-                                    bathUpdateReq.getStartTime(),
-                                    bathUpdateReq.getEndTime(),
-                                    bathUpdateReq.getMemo());
-
+            bathDAO.update(bathUpdateReq);
             return new StateRes(true);
         }
 }

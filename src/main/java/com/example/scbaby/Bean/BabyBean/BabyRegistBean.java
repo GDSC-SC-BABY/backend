@@ -18,17 +18,8 @@ public class BabyRegistBean {
     private final ImageUploadBean imageUploadBean;
 
     public StateRes exec(BabyRegistReq babyRegistReq, MultipartFile multipartFile) throws IOException {
-
         String imgUrl = imageUploadBean.exec(multipartFile);
-
-        BabyDAO babyDAO = BabyDAO.builder()
-                .name(babyRegistReq.getName())
-                .gender(babyRegistReq.getGender())
-                .dateTime(babyRegistReq.getDateTime())
-                .imageUrl(imgUrl)
-                .birthHeight(babyRegistReq.getBirthHeight())
-                .birthWeight(babyRegistReq.getBirthWeight())
-                .build();
+        BabyDAO babyDAO = babyRegistReq.toDAO(imgUrl);
 
         babyRepository.save(babyDAO);
         return new StateRes(true);

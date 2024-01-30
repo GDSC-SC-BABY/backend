@@ -1,5 +1,6 @@
 package com.example.scbaby.Model.DAO;
 
+import com.example.scbaby.Model.DTO.Babysitter.Req.BabysitterUpdateReq;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,12 +24,12 @@ public class BabysitterDAO {
     private Integer wage;
     private String residence;
 
-    public void update(String babysitterId, String name, String phoneNumber, String selfIntro, Integer wage, String residence) {
-        this.babysitterId = babysitterId;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.selfIntro = selfIntro;
-        this.wage = wage;
-        this.residence = residence;
+    public void update(BabysitterUpdateReq babysitterUpdateReq) {
+        this.babysitterId = babysitterUpdateReq.getBabysitterId();
+        this.name = babysitterUpdateReq.getName();
+        this.phoneNumber = babysitterUpdateReq.getPhoneNumber();
+        this.selfIntro = babysitterUpdateReq.getSelfIntro();
+        this.wage = babysitterUpdateReq.getWage();
+        this.residence = babysitterUpdateReq.getResidence();
     }
 }
