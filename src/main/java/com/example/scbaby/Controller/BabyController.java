@@ -31,7 +31,7 @@ public class BabyController {
         return babyService.getBaby(babyId);
     }
 
-    @Operation(summary = "Baby 수정.")
+    @Operation(summary = "Baby 수정")
     @PatchMapping("/baby/{babyId}")
     public StateRes updateBaby(@PathVariable Long babyId, @RequestPart BabyUpdateReq babyUpdateReq, @RequestPart MultipartFile multipartFile) throws IOException {
         return babyService.updateBaby(babyId, babyUpdateReq, multipartFile);
