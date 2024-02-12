@@ -1,5 +1,6 @@
 package com.example.scbaby.Model.DAO;
 
+import com.example.scbaby.Model.DTO.Sleep.Req.SleepUpdateReq;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,7 +9,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "sleep")
 @Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +17,7 @@ public class SleepDAO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sleepId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "baby_id")
     private BabyDAO baby;
 
@@ -29,10 +29,9 @@ public class SleepDAO {
 
     private String memo;
 
-    public void update(BabyDAO baby, LocalDateTime startTime, LocalDateTime endTime, String memo) {
-        this.baby = baby;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.memo = memo;
+    public void update(SleepUpdateReq sleepUpdateReq) {
+        this.startTime = sleepUpdateReq.getStartTime();
+        this.endTime = sleepUpdateReq.getEndTime();
+        this.memo = sleepUpdateReq.getMemo();
     }
 }

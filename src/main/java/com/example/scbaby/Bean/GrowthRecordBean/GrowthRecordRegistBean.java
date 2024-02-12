@@ -7,20 +7,18 @@ import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Repository.BabyRepository;
 import com.example.scbaby.Repository.GrowthRecordRepository;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class GrowthRecordRegistBean {
-
     private final GrowthRecordRepository growthRecordRepository;
     private final BabyRepository babyRepository;
 
     public StateRes exec(GrowthRecordRegistReq growthRecordRegistReq, Long babyId) {
-        GrowthRecordDAO growthRecordDAO = growthRecordRegistReq.toDAO();
         BabyDAO babyDAO = babyRepository.findById(babyId).orElseThrow(EntityNotFoundException::new);
-        growthRecordDAO.setBaby(babyDAO);
+        GrowthRecordDAO growthRecordDAO = growthRecordRegistReq.toDAO(babyDAO);
 
         growthRecordRepository.save(growthRecordDAO);
         return new StateRes(true);

@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 public class MedicineService {
-
     private final MedicineRegistBean medicineRegistBean;
     private final MedicineGetBean medicineGetBean;
     private final MedicineUpdateBean medicineUpdateBean;

@@ -16,9 +16,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class BabyUpdateReq {
     @NotBlank
-    private String babyId;
-
-    @NotBlank
     private String name;
 
     @NotBlank

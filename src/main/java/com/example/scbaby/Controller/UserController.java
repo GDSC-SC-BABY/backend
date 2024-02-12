@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class UserController {
-
     private final UserService userService;
 
     @Operation(summary = "UserId 등록")

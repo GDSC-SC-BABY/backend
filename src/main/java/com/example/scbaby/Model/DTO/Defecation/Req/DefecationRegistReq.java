@@ -1,5 +1,6 @@
 package com.example.scbaby.Model.DTO.Defecation.Req;
 
+import com.example.scbaby.Model.DAO.BabyDAO;
 import com.example.scbaby.Model.DAO.DefecationDAO;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
@@ -26,11 +27,12 @@ public class DefecationRegistReq {
 
     private Long babyId;
 
-    public DefecationDAO toDAO() {
+    public DefecationDAO toDAO(BabyDAO babyDAO) {
         return DefecationDAO.builder()
                 .startTime(startTime)
                 .defecationStatus(defecationStatus)
                 .memo(memo)
+                .baby(babyDAO)
                 .build();
     }
 }

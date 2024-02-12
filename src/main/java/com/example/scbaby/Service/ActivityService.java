@@ -12,7 +12,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ActivityService {
-
     private final ActivityListGetBean activityListGetBean;
 
     @Transactional(readOnly = true)

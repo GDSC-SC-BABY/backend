@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class GrowthRecordController {
-
     private final GrowthRecordService growthRecordService;
 
     @Operation(summary = "GrowthRecord 등록")

@@ -13,14 +13,12 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class DefecationRegistBean {
-
     private final DefecationRepository defecationRepository;
     private final BabyRepository babyRepository;
 
     public StateRes exec(DefecationRegistReq defecationRegistReq, Long babyId) {
-        DefecationDAO defecationDAO = defecationRegistReq.toDAO();
         BabyDAO babyDAO = babyRepository.findById(babyId).orElseThrow(EntityNotFoundException::new);
-        defecationDAO.setBaby(babyDAO);
+        DefecationDAO defecationDAO = defecationRegistReq.toDAO(babyDAO);
 
         defecationRepository.save(defecationDAO);
         return new StateRes(true);

@@ -5,13 +5,12 @@ import com.example.scbaby.Model.DTO.Defecation.Req.DefecationUpdateReq;
 import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Repository.DefecationRepository;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class DefecationUpdateBean {
-
     private final DefecationRepository defecationRepository;
 
     public StateRes exec(Long defecationId, DefecationUpdateReq defecationUpdateReq) {
