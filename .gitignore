@@ -36,3 +36,4 @@ out/
 ### VS Code ###
 .vscode/
 /src/main/resources/secrets.properties
+/src/main/resources/gdsc-406602-b85ddfb07ae3.json

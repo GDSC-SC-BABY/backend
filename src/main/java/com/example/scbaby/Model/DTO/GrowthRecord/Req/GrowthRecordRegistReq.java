@@ -1,5 +1,6 @@
 package com.example.scbaby.Model.DTO.GrowthRecord.Req;
 
+import com.example.scbaby.Model.DAO.BabyDAO;
 import com.example.scbaby.Model.DAO.GrowthRecordDAO;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
@@ -33,12 +34,13 @@ public class GrowthRecordRegistReq {
     private LocalDateTime dateTime;
 
 
-    public GrowthRecordDAO toDAO() {
+    public GrowthRecordDAO toDAO(BabyDAO babyDAO) {
         return GrowthRecordDAO.builder()
                 .height(height)
                 .weight(weight)
                 .headSize(headSize)
                 .dateTime(dateTime)
+                .baby(babyDAO)
                 .build();
     }
 }

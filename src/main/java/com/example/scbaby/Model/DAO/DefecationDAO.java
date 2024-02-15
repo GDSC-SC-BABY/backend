@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "defeaction")
 @Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +16,7 @@ public class DefecationDAO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long defecationId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "baby_id")
     private BabyDAO baby;
 

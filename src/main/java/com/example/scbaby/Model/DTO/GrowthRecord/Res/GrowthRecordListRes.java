@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GrowthRecordListRes {
+    private Long growthRecordId;
     private float height;
     private float weight;
     private float headSize;

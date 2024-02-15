@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 @Component
 @RequiredArgsConstructor
 public class GrowthRecordListBean {
-
     private final GrowthRecordRepository growthRecordRepository;
     private final BabyRepository babyRepository;
 
@@ -36,6 +35,7 @@ public class GrowthRecordListBean {
 
         List<GrowthRecordListRes> content = growthRecordDAOList.stream()
                 .map(growthRecordDAO -> GrowthRecordListRes.builder()
+                        .growthRecordId(growthRecordDAO.getGrowthRecordId())
                         .height(growthRecordDAO.getHeight())
                         .weight(growthRecordDAO.getWeight())
                         .headSize(growthRecordDAO.getHeadSize())

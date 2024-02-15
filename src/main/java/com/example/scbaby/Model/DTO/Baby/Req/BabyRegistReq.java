@@ -26,21 +26,18 @@ public class BabyRegistReq {
     @PastOrPresent
     private LocalDateTime dateTime;
 
-    @NotBlank
-    private String imageUrl;
-
     @NotNull
     private float birthHeight;
 
     @NotNull
     private float birthWeight;
 
-    public BabyDAO toDAO() {
+    public BabyDAO toDAO(String imgUrl) {
         return BabyDAO.builder()
                 .name(name)
                 .gender(gender)
                 .dateTime(dateTime)
-                .imageUrl(imageUrl)
+                .imageUrl(imgUrl)
                 .birthHeight(birthHeight)
                 .birthWeight(birthWeight)
                 .build();

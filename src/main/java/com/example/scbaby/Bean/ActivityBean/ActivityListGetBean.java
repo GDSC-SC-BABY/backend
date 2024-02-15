@@ -9,13 +9,13 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
 public class ActivityListGetBean {
-
     private final BabyRepository babyRepository;
     private final SleepRepository sleepRepository;
     private final BathRepository bathRepository;
@@ -33,9 +33,7 @@ public class ActivityListGetBean {
         List<MedicineDAO> medicineActivities = medicineRepository.findByBabyAndStartTimeBetweenOrderByStartTime(babyDAO, startDate, endDate);
         List<DefecationDAO> defecationActivities = defecationRepository.findByBabyAndStartTimeBetweenOrderByStartTime(babyDAO, startDate, endDate);
 
-        List<ActivityListGetRes> allActivities = mergeAndSortActivities(sleepActivities, bathActivities, medicineActivities, defecationActivities);
-
-        return allActivities;
+        return mergeAndSortActivities(sleepActivities, bathActivities, medicineActivities, defecationActivities);
     }
 
     private List<ActivityListGetRes> mergeAndSortActivities(List<SleepDAO> sleepActivities,
@@ -59,7 +57,7 @@ public class ActivityListGetBean {
                 .toList());
 
         // 정렬
-        allActivities.sort((a1, a2) -> a1.getStartTime().compareTo(a2.getStartTime()));
+        allActivities.sort(Comparator.comparing(ActivityListGetRes::getStartTime));
 
         return allActivities;
     }

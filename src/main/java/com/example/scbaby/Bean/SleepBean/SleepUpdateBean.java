@@ -11,17 +11,12 @@ import org.springframework.stereotype.Component;
 @Component
 @AllArgsConstructor
 public class SleepUpdateBean {
-
     private final SleepRepository sleepRepository;
 
     public StateRes exec(Long sleepId, SleepUpdateReq sleepUpdateReq) {
             SleepDAO sleepDAO = sleepRepository.findById(sleepId).orElseThrow(EntityNotFoundException::new);
 
-            sleepDAO.update(sleepDAO.getBaby(),
-                                    sleepUpdateReq.getStartTime(),
-                                    sleepUpdateReq.getEndTime(),
-                                    sleepUpdateReq.getMemo());
-
+            sleepDAO.update(sleepUpdateReq);
             return new StateRes(true);
         }
 }

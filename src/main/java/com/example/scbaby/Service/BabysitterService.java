@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 public class BabysitterService {
-
     private final BabysitterRegistBean babysitterRegistBean;
     private final BabysitterGetBean babysitterGetBean;
     private final BabysitterUpdateBean babysitterUpdateBean;

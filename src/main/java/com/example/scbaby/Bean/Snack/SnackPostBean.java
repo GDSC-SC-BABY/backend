@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class SnackPostBean {
-
     private final SnackRepository snackRepository;
     private final BabyRepository babyRepository;
     private final BeverageRepository beverageRepository;

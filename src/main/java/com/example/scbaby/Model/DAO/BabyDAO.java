@@ -1,10 +1,8 @@
 package com.example.scbaby.Model.DAO;
 
+import com.example.scbaby.Model.DTO.Baby.Req.BabyUpdateReq;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -54,13 +52,16 @@ public class BabyDAO {
     @OneToMany(mappedBy = "baby")
     private List<DefecationDAO> defecationDAOS;
 
-    public void update(String name, String gender, LocalDateTime dateTime, String imageUrl, float birthHeight, float birthWeight) {
-        this.name = name;
-        this.gender = gender;
-        this.dateTime = dateTime;
-        this.imageUrl = imageUrl;
-        this.birthHeight = birthHeight;
-        this.birthWeight = birthWeight;
+    @OneToMany(mappedBy = "baby")
+    private List<BabyDiaryDAO> babyDiaryDAOS;
+
+    public void update(BabyUpdateReq babyUpdateReq, String imgUrl) {
+        this.name = babyUpdateReq.getName();
+        this.gender = babyUpdateReq.getGender();
+        this.dateTime = babyUpdateReq.getDateTime();
+        this.imageUrl = imgUrl;
+        this.birthHeight = babyUpdateReq.getBirthHeight();
+        this.birthWeight = babyUpdateReq.getBirthWeight();
     }
 
     @OneToMany(mappedBy = "baby")

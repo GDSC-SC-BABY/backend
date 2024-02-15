@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BathGetRes {
+    private Long bathId;
     private LocalDateTime startTime;
 
     private LocalDateTime endTime;
@@ -21,6 +22,7 @@ public class BathGetRes {
 
     public static BathGetRes of(BathDAO bathDAO) {
         return BathGetRes.builder()
+                .bathId(bathDAO.getBathId())
                 .startTime(bathDAO.getStartTime())
                 .endTime(bathDAO.getEndTime())
                 .memo(bathDAO.getMemo())

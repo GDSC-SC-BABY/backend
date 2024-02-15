@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class SleepController {
-
     private final SleepService sleepService;
 
     @Operation(summary = "생활패턴에 Sleep 등록")

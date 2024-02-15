@@ -10,6 +10,9 @@ import com.example.scbaby.Model.DTO.StateRes;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @Service
 @RequiredArgsConstructor
@@ -19,8 +22,8 @@ public class BabyService {
     private final BabyUpdateBean babyUpdateBean;
 
     @Transactional
-    public StateRes registerBaby(BabyRegistReq babyRegistReq) {
-        return babyRegistBean.exec(babyRegistReq);
+    public StateRes registerBaby(BabyRegistReq babyRegistReq, MultipartFile multipartFile) throws IOException {
+        return babyRegistBean.exec(babyRegistReq, multipartFile);
     }
 
     @Transactional(readOnly = true)
@@ -29,7 +32,7 @@ public class BabyService {
     }
 
     @Transactional
-    public StateRes updateBaby(Long babyId, BabyUpdateReq babyUpdateReq) {
-        return babyUpdateBean.exec(babyId, babyUpdateReq);
+    public StateRes updateBaby(Long babyId, BabyUpdateReq babyUpdateReq, MultipartFile multipartFile) throws IOException {
+        return babyUpdateBean.exec(babyId, babyUpdateReq, multipartFile);
     }
 }

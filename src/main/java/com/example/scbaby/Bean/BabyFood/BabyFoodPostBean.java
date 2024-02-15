@@ -15,7 +15,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class BabyFoodPostBean {
-
     private final BabyFoodRepository babyFoodRepository;
     private final BabyRepository babyRepository;
     private final BasePorridgeRepository basePorridgeRepository;

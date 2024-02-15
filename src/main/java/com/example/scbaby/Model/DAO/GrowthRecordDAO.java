@@ -1,5 +1,6 @@
 package com.example.scbaby.Model.DAO;
 
+import com.example.scbaby.Model.DTO.GrowthRecord.Req.GrowthRecordUpdateReq;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,7 +9,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "growth_record")
 @Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +17,7 @@ public class GrowthRecordDAO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long growthRecordId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "baby_id")
     private BabyDAO baby;
 
@@ -28,11 +28,10 @@ public class GrowthRecordDAO {
     //기록 날짜
     private LocalDateTime dateTime;
 
-    public void update(BabyDAO babyDAO, float height, float weight, float headSize, LocalDateTime dateTime) {
-        this.baby = babyDAO;
-        this.height = height;
-        this.weight = weight;
-        this.headSize = headSize;
-        this.dateTime = dateTime;
+    public void update(GrowthRecordUpdateReq growthRecordUpdateReq) {
+        this.height = growthRecordUpdateReq.getHeight();
+        this.weight = growthRecordUpdateReq.getWeight();
+        this.headSize = growthRecordUpdateReq.getHeadSize();
+        this.dateTime = growthRecordUpdateReq.getDateTime();
     }
 }

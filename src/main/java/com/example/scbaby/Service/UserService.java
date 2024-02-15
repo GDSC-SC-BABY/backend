@@ -1,5 +1,6 @@
 package com.example.scbaby.Service;
 
+import com.example.scbaby.Bean.UserBean.UserDuplicateCheckBean;
 import com.example.scbaby.Bean.UserBean.UserGetBean;
 import com.example.scbaby.Bean.UserBean.UserRegistBean;
 import com.example.scbaby.Model.DTO.StateRes;
@@ -12,17 +13,22 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 public class UserService {
-
     private final UserRegistBean userRegistBean;
     private final UserGetBean userGetBean;
+    private final UserDuplicateCheckBean userDuplicateCheckBean;
 
     @Transactional
     public StateRes registerUser(UserRegistReq userRegistReq) {
         return userRegistBean.exec(userRegistReq);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public UserGetRes getUser(String userId) {
         return userGetBean.exec(userId);
+    }
+
+    @Transactional(readOnly = true)
+    public StateRes duplicateCheckUser(String userId) {
+        return userDuplicateCheckBean.exec(userId);
     }
 }

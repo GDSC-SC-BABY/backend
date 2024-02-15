@@ -13,6 +13,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DefecationGetRes {
+    private Long defecationId;
+
     private LocalDateTime startTime;
 
     private String defecationStatus;
@@ -21,6 +23,7 @@ public class DefecationGetRes {
 
     public static DefecationGetRes of(DefecationDAO defecationDAO) {
         return DefecationGetRes.builder()
+                .defecationId(defecationDAO.getDefecationId())
                 .startTime(defecationDAO.getStartTime())
                 .defecationStatus(defecationDAO.getDefecationStatus())
                 .memo(defecationDAO.getMemo())

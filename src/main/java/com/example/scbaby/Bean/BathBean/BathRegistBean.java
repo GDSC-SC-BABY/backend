@@ -13,14 +13,12 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class BathRegistBean {
-
     private final BathRepository bathRepository;
     private final BabyRepository babyRepository;
 
     public StateRes exec(BathRegistReq bathRegistReq, Long babyId) {
-        BathDAO bathDAO = bathRegistReq.toDAO();
         BabyDAO babyDAO = babyRepository.findById(babyId).orElseThrow(EntityNotFoundException::new);
-        bathDAO.setBaby(babyDAO);
+        BathDAO bathDAO = bathRegistReq.toDAO(babyDAO);
 
         bathRepository.save(bathDAO);
         return new StateRes(true);

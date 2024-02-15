@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class BabyFoodController {
-
     private final BabyFoodService babyFoodService;
 
     @Operation(summary = "babyFood 조회")
