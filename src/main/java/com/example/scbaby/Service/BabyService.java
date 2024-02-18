@@ -22,8 +22,8 @@ public class BabyService {
     private final BabyUpdateBean babyUpdateBean;
 
     @Transactional
-    public StateRes registerBaby(BabyRegistReq babyRegistReq, MultipartFile multipartFile) throws IOException {
-        return babyRegistBean.exec(babyRegistReq, multipartFile);
+    public StateRes registerBaby(BabyRegistReq babyRegistReq, MultipartFile multipartFile, String userId) throws IOException {
+        return babyRegistBean.exec(babyRegistReq, multipartFile, userId);
     }
 
     @Transactional(readOnly = true)

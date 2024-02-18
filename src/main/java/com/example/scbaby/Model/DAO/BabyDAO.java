@@ -37,6 +37,8 @@ public class BabyDAO {
     private float birthHeight;
     private float birthWeight;
 
+    private String babyCode;
+
     @OneToMany(mappedBy = "baby")
     private List<GrowthRecordDAO> growthRecordDAOS;
 
