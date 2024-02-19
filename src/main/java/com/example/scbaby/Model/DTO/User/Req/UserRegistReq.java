@@ -20,20 +20,12 @@ public class UserRegistReq {
     private String name;
 
     @NotNull
-    private String residence;
-
-    @NotNull
-    private String phoneNumber;
-
-    @NotNull
     private Long babyId;
 
     public UserDAO toDAO(BabyDAO babyDAO) {
         return UserDAO.builder()
                 .userId(userId)
                 .name(name)
-                .residence(residence)
-                .phoneNumber(phoneNumber)
                 .baby(babyDAO)
                 .build();
     }

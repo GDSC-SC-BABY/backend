@@ -24,9 +24,4 @@ public class UserDAO {
     private BabyDAO baby;
 
     private String name;
-
-    private String phoneNumber;
-
-    private String residence;
-
 }
