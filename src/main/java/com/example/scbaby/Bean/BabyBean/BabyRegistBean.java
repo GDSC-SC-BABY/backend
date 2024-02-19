@@ -26,7 +26,9 @@ public class BabyRegistBean {
     public StateRes exec(BabyRegistReq babyRegistReq, MultipartFile multipartFile, String userId) throws IOException {
         String imgUrl = imageUploadBean.exec(multipartFile);
         BabyDAO babyDAO = babyRegistReq.toDAO(imgUrl, babyCode());
+        System.out.println("babyDAO = " + babyDAO);
         BabyDAO babyDAO1 = babyRepository.save(babyDAO);
+        System.out.println("babyDAO1 = " + babyDAO1);
 
         UserDAO userDAO = userRepository.findById(userId).get();
         userDAO.setBaby(babyDAO1);

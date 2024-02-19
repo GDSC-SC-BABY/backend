@@ -28,14 +28,14 @@ public class ImageController {
     }
 
     @Operation(summary = "사진 리스트 업로드")
-    @PostMapping(value = "/Image",
+    @PostMapping(value = "/ImageList",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public UrlListRes uploadImageList(@RequestBody List<MultipartFile> file) throws IOException {
         return ImageService.uploadImageList(file);
     }
 
     @Operation(summary = "사진 리스트 업데이트")
-    @PostMapping(value = "/Image",
+    @PostMapping(value = "/update/ImageList",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public UrlListRes updateImageList(@RequestBody List<MultipartFile> file) throws IOException {
         return ImageService.updateImageList(file);
