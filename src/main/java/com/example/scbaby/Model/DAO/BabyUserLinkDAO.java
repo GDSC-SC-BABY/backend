@@ -23,5 +23,5 @@ public class BabyUserLinkDAO {
     @JoinColumn(name = "user_id")
     private UserDAO user;
 
-    private String relationshipType; // 예: 'Parent', 'Guardian' 등
+    private String relationshipType; // 예: 'Parent' 등
 }
