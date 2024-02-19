@@ -19,7 +19,7 @@ public class BabyDAO {
     private Long babyId;
 
     @OneToMany(mappedBy = "baby")
-    private List<BabyUserLinkDAO> babyUserLinkDAOS;
+    private List<UserDAO> userDAOS;
 
     //아기 이름
     private String name;

@@ -19,8 +19,9 @@ public class UserDAO {
     @Column(name = "user_id", length = 50)
     private String userId;
 
-    @OneToMany(mappedBy = "user")
-    private List<BabyUserLinkDAO> babyUserLinkDAOS;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "baby_id")
+    private BabyDAO baby;
 
     private String name;
 
