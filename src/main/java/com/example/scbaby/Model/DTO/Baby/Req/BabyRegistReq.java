@@ -32,7 +32,7 @@ public class BabyRegistReq {
     @NotNull
     private float birthWeight;
 
-    public BabyDAO toDAO(String imgUrl) {
+    public BabyDAO toDAO(String imgUrl, String babyCode) {
         return BabyDAO.builder()
                 .name(name)
                 .gender(gender)
@@ -40,6 +40,7 @@ public class BabyRegistReq {
                 .imageUrl(imgUrl)
                 .birthHeight(birthHeight)
                 .birthWeight(birthWeight)
+                .babyCode(babyCode)
                 .build();
     }
 }

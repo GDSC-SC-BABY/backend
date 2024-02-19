@@ -19,7 +19,7 @@ public class BabyDAO {
     private Long babyId;
 
     @OneToMany(mappedBy = "baby")
-    private List<BabyUserLinkDAO> babyUserLinkDAOS;
+    private List<UserDAO> userDAOS;
 
     //아기 이름
     private String name;
@@ -36,6 +36,8 @@ public class BabyDAO {
     //출생 키, 몸무게
     private float birthHeight;
     private float birthWeight;
+
+    private String babyCode;
 
     @OneToMany(mappedBy = "baby")
     private List<GrowthRecordDAO> growthRecordDAOS;

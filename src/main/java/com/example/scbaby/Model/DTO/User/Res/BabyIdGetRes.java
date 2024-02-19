@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserGetRes {
-    private String name;
+public class BabyIdGetRes {
+    private Long babyId;
 
-    public static UserGetRes of(UserDAO userDAO) {
-        return UserGetRes.builder()
-                .name(userDAO.getName())
+    public static BabyIdGetRes of(UserDAO userDAO) {
+        return BabyIdGetRes.builder()
+                .babyId(userDAO.getBaby().getBabyId())
                 .build();
     }
 }
