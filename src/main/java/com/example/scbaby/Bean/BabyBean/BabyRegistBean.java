@@ -21,21 +21,17 @@ import java.io.IOException;
 public class BabyRegistBean {
     private final BabyRepository babyRepository;
     private final ImageUploadBean imageUploadBean;
-    private final BabyUserLinkRepository babyUserLinkRepository;
     private final UserRepository userRepository;
 
     public StateRes exec(BabyRegistReq babyRegistReq, MultipartFile multipartFile, String userId) throws IOException {
         String imgUrl = imageUploadBean.exec(multipartFile);
         BabyDAO babyDAO = babyRegistReq.toDAO(imgUrl, babyCode());
+        BabyDAO babyDAO1 = babyRepository.save(babyDAO);
 
         UserDAO userDAO = userRepository.findById(userId).get();
-        BabyUserLinkDAO babyUserLinkDAO = BabyUserLinkDAO.builder()
-                .baby(babyDAO)
-                .user(userDAO)
-                .build();
-        babyUserLinkRepository.save(babyUserLinkDAO);
+        userDAO.setBaby(babyDAO1);
+        userRepository.save(userDAO);
 
-        babyRepository.save(babyDAO);
         return new StateRes(true);
     }
 
