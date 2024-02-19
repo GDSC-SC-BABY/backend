@@ -1,7 +1,9 @@
 package com.example.scbaby.Controller;
 
 import com.example.scbaby.Model.DTO.StateRes;
+import com.example.scbaby.Model.DTO.User.Req.UserGetReq;
 import com.example.scbaby.Model.DTO.User.Req.UserRegistReq;
+import com.example.scbaby.Model.DTO.User.Res.BabyIdGetRes;
 import com.example.scbaby.Model.DTO.User.Res.UserGetRes;
 import com.example.scbaby.Service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -20,15 +22,21 @@ public class UserController {
         return userService.registerUser(userRegistrationReq);
     }
 
-    @Operation(summary = "UserId로 조회")
-    @GetMapping("/user/{userId}")
-    public UserGetRes getUser(@PathVariable String userId) {
-        return userService.getUser(userId);
+    @Operation(summary = "UserId로 User 조회")
+    @GetMapping("/user")
+    public UserGetRes getUser(@RequestBody UserGetReq userGetReq) {
+        return userService.getUser(userGetReq);
     }
 
     @Operation(summary = "UserId로 중복여부 확인")
     @GetMapping("/user/duplicate/{userId}")
     public StateRes duplicatieUser(@PathVariable String userId) {
         return userService.duplicateCheckUser(userId);
+    }
+
+    @Operation(summary = "UserId로 BabyId 조회")
+    @GetMapping("/user/getBaby")
+    public BabyIdGetRes getBabyId(@RequestBody UserGetReq userGetReq) {
+        return userService.getBabyId(userGetReq);
     }
 }
