@@ -1,6 +1,7 @@
 package com.example.scbaby.Controller;
 
 import com.example.scbaby.Model.DTO.StateRes;
+import com.example.scbaby.Model.DTO.User.Req.AddBabyReq;
 import com.example.scbaby.Model.DTO.User.Req.UserGetReq;
 import com.example.scbaby.Model.DTO.User.Req.UserRegistReq;
 import com.example.scbaby.Model.DTO.User.Res.BabyIdGetRes;
@@ -38,5 +39,11 @@ public class UserController {
     @GetMapping("/user/getBaby")
     public BabyIdGetRes getBabyId(@RequestBody UserGetReq userGetReq) {
         return userService.getBabyId(userGetReq);
+    }
+
+    @Operation(summary = "babyCode로 baby 추가")
+    @PatchMapping("/user/addBaby")
+    public StateRes addBaby(@RequestBody AddBabyReq addBabyReq) {
+        return userService.addBaby(addBabyReq);
     }
 }
