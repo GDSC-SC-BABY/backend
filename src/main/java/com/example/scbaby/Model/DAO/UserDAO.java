@@ -1,16 +1,14 @@
 package com.example.scbaby.Model.DAO;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "users")
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,9 +22,4 @@ public class UserDAO {
     private BabyDAO baby;
 
     private String name;
-
-    private String phoneNumber;
-
-    private String residence;
-
 }

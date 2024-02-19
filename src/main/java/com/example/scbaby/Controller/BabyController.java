@@ -21,8 +21,9 @@ public class BabyController {
     @Operation(summary = "Baby 등록")
     @PostMapping("/baby")
     public StateRes registerUser(@RequestPart BabyRegistReq babyRegistReq,
-                                 @RequestPart MultipartFile multipartFile) throws IOException {
-        return babyService.registerBaby(babyRegistReq, multipartFile);
+                                 @RequestPart MultipartFile multipartFile,
+                                 @RequestPart String userId) throws IOException {
+        return babyService.registerBaby(babyRegistReq, multipartFile, userId);
     }
 
     @Operation(summary = "BabyId로 Baby 조회")

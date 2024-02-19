@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserGetRes {
     private String name;
-    private String residence;
 
     public static UserGetRes of(UserDAO userDAO) {
         return UserGetRes.builder()
                 .name(userDAO.getName())
-                .residence(userDAO.getResidence()
-                ).build();
+                .build();
     }
 }

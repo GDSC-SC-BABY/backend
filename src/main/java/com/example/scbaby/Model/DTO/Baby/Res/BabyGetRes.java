@@ -28,6 +28,8 @@ public class BabyGetRes {
 
     private float birthWeight;
 
+    private String babyCode;
+
     public static BabyGetRes of(BabyDAO babyDAO) {
         return BabyGetRes.builder()
                 .babyId(babyDAO.getBabyId())
@@ -37,6 +39,7 @@ public class BabyGetRes {
                 .imageUrl(babyDAO.getImageUrl())
                 .birthHeight(babyDAO.getBirthHeight())
                 .birthWeight(babyDAO.getBirthWeight())
+                .babyCode(babyDAO.getBabyCode())
                 .build();
     }
 }
