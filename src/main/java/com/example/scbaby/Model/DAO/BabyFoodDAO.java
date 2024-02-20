@@ -19,7 +19,7 @@ public class BabyFoodDAO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long babyFoodId;
-    private LocalDateTime dateTime;
+    private String dateTime;
 
     @ManyToOne
     @JoinColumn(name = "baby_id")

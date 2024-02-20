@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BabyFoodPostReq {
     private Long babyId;
-    private LocalDateTime dateTime;
+    private String dateTime;
     private float amount;
     private String imageUrl;
     private String specialNote;
