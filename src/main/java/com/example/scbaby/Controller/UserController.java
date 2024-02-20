@@ -19,8 +19,8 @@ public class UserController {
 
     @Operation(summary = "UserId 등록")
     @PostMapping("/user")
-    public StateRes registerUser(@RequestBody UserRegistReq userRegistrationReq) {
-        return userService.registerUser(userRegistrationReq);
+    public StateRes registerUser(@RequestPart String userId) {
+        return userService.registerUser(userId);
     }
 
     @Operation(summary = "UserId로 User 조회")
