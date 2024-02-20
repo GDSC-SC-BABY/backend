@@ -19,25 +19,25 @@ public class UserController {
 
     @Operation(summary = "UserId 등록")
     @PostMapping("/user")
-    public StateRes registerUser(@PathVariable String userId) {
+    public StateRes registerUser(@RequestParam  String userId) {
         return userService.registerUser(userId);
     }
 
     @Operation(summary = "UserId로 User 조회")
     @GetMapping("/user")
-    public UserGetRes getUser(@PathVariable String userId) {
+    public UserGetRes getUser(@RequestParam  String userId) {
         return userService.getUser(userId);
     }
 
     @Operation(summary = "UserId로 중복여부 확인")
     @GetMapping("/user/duplicate/{userId}")
-    public StateRes duplicatieUser(@PathVariable String userId) {
+    public StateRes duplicatieUser(@RequestParam  String userId) {
         return userService.duplicateCheckUser(userId);
     }
 
     @Operation(summary = "UserId로 BabyId 조회")
     @GetMapping("/user/getBaby")
-    public BabyIdGetRes getBabyId(@PathVariable String userId) {
+    public BabyIdGetRes getBabyId(@RequestParam  String userId) {
         return userService.getBabyId(userId);
     }
 
