@@ -26,8 +26,8 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public UserGetRes getUser(UserGetReq userGetReq) {
-        return userGetBean.exec(userGetReq);
+    public UserGetRes getUser(String userId) {
+        return userGetBean.exec(userId);
     }
 
     @Transactional(readOnly = true)
@@ -36,8 +36,8 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public BabyIdGetRes getBabyId(UserGetReq userGetReq) {
-        return getBabyIdByUserIdBean.exec(userGetReq);
+    public BabyIdGetRes getBabyId(String userId) {
+        return getBabyIdByUserIdBean.exec(userId);
     }
 
     @Transactional(readOnly = true)
