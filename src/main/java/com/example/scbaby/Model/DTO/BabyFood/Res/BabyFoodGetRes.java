@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class BabyFoodGetRes {
     private Long babyFoodId;
-    private LocalDateTime dateTime;
+    private String dateTime;
     private String imageUrl;
     private float amount;
 }

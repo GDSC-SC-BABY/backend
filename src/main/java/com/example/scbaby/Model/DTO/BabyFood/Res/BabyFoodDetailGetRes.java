@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BabyFoodDetailGetRes {
-    private LocalDateTime dateTime;
+    private String dateTime;
     private String SpecialNote;
     private float amount;
     private String imageUrl;
