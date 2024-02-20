@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 public class GetBabyIdByUserIdBean {
     private final UserRepository userRepository;
 
-    public BabyIdGetRes exec(UserGetReq userGetReq) {
-        UserDAO userDAO = userRepository.findById(userGetReq.getUserId()).orElseThrow(EntityNotFoundException::new);
+    public BabyIdGetRes exec(String userId) {
+        UserDAO userDAO = userRepository.findById(userId).orElseThrow(EntityNotFoundException::new);
         return BabyIdGetRes.of(userDAO);
     }
 }

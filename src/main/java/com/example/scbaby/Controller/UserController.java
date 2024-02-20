@@ -19,14 +19,14 @@ public class UserController {
 
     @Operation(summary = "UserId 등록")
     @PostMapping("/user")
-    public StateRes registerUser(@RequestPart String userId) {
+    public StateRes registerUser(@PathVariable String userId) {
         return userService.registerUser(userId);
     }
 
     @Operation(summary = "UserId로 User 조회")
     @GetMapping("/user")
-    public UserGetRes getUser(@RequestBody UserGetReq userGetReq) {
-        return userService.getUser(userGetReq);
+    public UserGetRes getUser(@PathVariable String userId) {
+        return userService.getUser(userId);
     }
 
     @Operation(summary = "UserId로 중복여부 확인")
@@ -37,8 +37,8 @@ public class UserController {
 
     @Operation(summary = "UserId로 BabyId 조회")
     @GetMapping("/user/getBaby")
-    public BabyIdGetRes getBabyId(@RequestBody UserGetReq userGetReq) {
-        return userService.getBabyId(userGetReq);
+    public BabyIdGetRes getBabyId(@PathVariable String userId) {
+        return userService.getBabyId(userId);
     }
 
     @Operation(summary = "babyCode로 baby 추가")
