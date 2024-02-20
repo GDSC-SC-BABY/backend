@@ -20,6 +20,10 @@ jobs:
     - name: Create secrets.properties
       run: |
         echo "${{ secrets.SECRET }}" > src/main/resources/secrets.properties
+
+    - name: Create secrets.properties
+      run: |
+        echo "${{ secrets.json }}" > src/main/resources/gdsc-406602-b85ddfb07ae3.json
         
     - name: Build with Gradle
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
