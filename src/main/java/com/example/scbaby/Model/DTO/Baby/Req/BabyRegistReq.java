@@ -30,10 +30,10 @@ public class BabyRegistReq {
     private LocalDateTime dateTime;
 
     @NotNull
-    private float birthHeight;
+    private String birthHeight;
 
     @NotNull
-    private float birthWeight;
+    private String birthWeight;
 
     @NotNull
     private String userId;
