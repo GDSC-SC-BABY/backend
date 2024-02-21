@@ -12,10 +12,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserGetRes {
     private String name;
+    private String imageUri;
+    private String relation;
 
     public static UserGetRes of(UserDAO userDAO) {
         return UserGetRes.builder()
                 .name(userDAO.getName())
+                .imageUri(userDAO.getImageUri())
+                .relation(userDAO.getRelation())
                 .build();
     }
 }
