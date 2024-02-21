@@ -19,11 +19,16 @@ public class UserRegistReq {
     @NotNull
     private String name;
 
+    private String imageUri;
+
+    private String relation;
 
     public UserDAO toDAO() {
         return UserDAO.builder()
                 .userId(userId)
                 .name(name)
+                .imageUri(imageUri)
+                .relation(relation)
                 .build();
     }
 }

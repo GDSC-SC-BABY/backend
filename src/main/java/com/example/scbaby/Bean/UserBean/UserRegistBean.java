@@ -14,9 +14,8 @@ import org.springframework.stereotype.Component;
 public class UserRegistBean {
     private final UserRepository userRepository;
 
-    public StateRes exec(String userId) {
-        UserRegistReq userRegistReq = UserRegistReq.builder().userId(userId).build();
-        userRepository.save(userRegistReq.toDAO());
+    public StateRes exec(UserRegistReq userRegistrationReq) {
+        userRepository.save(userRegistrationReq.toDAO());
         return new StateRes(true);
     }
 }
