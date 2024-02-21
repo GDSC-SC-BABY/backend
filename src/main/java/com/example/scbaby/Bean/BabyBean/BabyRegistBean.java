@@ -41,9 +41,4 @@ public class BabyRegistBean {
         String uuid = UUID.randomUUID().toString();
         return uuid.replaceAll("-", "").substring(0, length);
     }
-
-    public static void main(String[] args) {
-        String uniqueCode = generateUniqueCode(8);
-        System.out.println(uniqueCode);
-    }
 }

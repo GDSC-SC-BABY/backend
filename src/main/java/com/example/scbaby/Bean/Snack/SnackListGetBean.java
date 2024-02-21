@@ -1,13 +1,9 @@
 package com.example.scbaby.Bean.Snack;
 
 import com.example.scbaby.Model.DAO.BabyDAO;
-import com.example.scbaby.Model.DAO.BabyFoodDAO;
 import com.example.scbaby.Model.DAO.SnackDAO;
-import com.example.scbaby.Model.DTO.BabyFood.Res.BabyFoodGetRes;
-import com.example.scbaby.Model.DTO.BabyFood.Res.BabyFoodListRes;
 import com.example.scbaby.Model.DTO.Snack.Res.SnackGetRes;
 import com.example.scbaby.Model.DTO.Snack.Res.SnackListRes;
-import com.example.scbaby.Repository.BabyFoodRepository;
 import com.example.scbaby.Repository.BabyRepository;
 import com.example.scbaby.Repository.SnackRepository;
 import lombok.RequiredArgsConstructor;

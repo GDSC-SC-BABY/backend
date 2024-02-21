@@ -2,7 +2,6 @@ package com.example.scbaby.Controller;
 
 import com.example.scbaby.Model.DTO.Image.UrlListRes;
 import com.example.scbaby.Model.DTO.Image.UrlRes;
-import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Service.ImageService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
