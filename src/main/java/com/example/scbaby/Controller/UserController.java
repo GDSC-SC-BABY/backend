@@ -2,7 +2,6 @@ package com.example.scbaby.Controller;
 
 import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Model.DTO.User.Req.AddBabyReq;
-import com.example.scbaby.Model.DTO.User.Req.UserGetReq;
 import com.example.scbaby.Model.DTO.User.Req.UserRegistReq;
 import com.example.scbaby.Model.DTO.User.Res.BabyIdGetRes;
 import com.example.scbaby.Model.DTO.User.Res.UserGetRes;

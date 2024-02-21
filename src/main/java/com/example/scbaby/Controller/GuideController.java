@@ -1,6 +1,5 @@
 package com.example.scbaby.Controller;
 
-import com.example.scbaby.Model.DTO.GrowthRecord.Res.PageResponseDto;
 import com.example.scbaby.Model.DTO.Guide.GuideGetDTO;
 import com.example.scbaby.Service.GuideService;
 import io.swagger.v3.oas.annotations.Operation;

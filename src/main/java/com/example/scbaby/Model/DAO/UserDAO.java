@@ -3,8 +3,6 @@ package com.example.scbaby.Model.DAO;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "users")
 @Getter
