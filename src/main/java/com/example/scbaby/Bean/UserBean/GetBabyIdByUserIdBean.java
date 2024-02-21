@@ -7,13 +7,18 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor
 public class GetBabyIdByUserIdBean {
     private final UserRepository userRepository;
 
     public BabyIdGetRes exec(String userId) {
-        UserDAO userDAO = userRepository.findById(userId).orElseThrow(EntityNotFoundException::new);
-        return BabyIdGetRes.of(userDAO);
+        Optional<UserDAO> userDAO = userRepository.findById(userId);
+        if (userDAO.isEmpty()) {
+            return BabyIdGetRes.builder().babyId(null).build();
+        }
+        return BabyIdGetRes.of(userDAO.get());
     }
 }
