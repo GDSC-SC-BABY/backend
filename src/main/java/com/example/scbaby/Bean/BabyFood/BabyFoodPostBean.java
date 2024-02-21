@@ -31,13 +31,11 @@ public class BabyFoodPostBean {
 
         BabyFoodDAO saveBabyFoodDAO = babyFoodRepository.save(babyFoodDAO);
 
-        for(int i=0;i<babyFoodPostReq.getBasePorridgeList().size();i++) {
-            BasePorridgeDAO basePorridgeDAO = BasePorridgeDAO.builder()
-                    .babyFood(saveBabyFoodDAO)
-                    .basePorridgeName(babyFoodPostReq.getBasePorridgeList().get(i).getName())
-                    .build();
-            basePorridgeRepository.save(basePorridgeDAO);
-        }
+        BasePorridgeDAO basePorridgeDAO = BasePorridgeDAO.builder()
+                .babyFood(saveBabyFoodDAO)
+                .basePorridgeName(babyFoodPostReq.getBasePorridgeName())
+                .build();
+        basePorridgeRepository.save(basePorridgeDAO);
 
         for(int i=0;i<babyFoodPostReq.getToppingList().size();i++) {
             ToppingDAO toppingDAO = ToppingDAO.builder()
