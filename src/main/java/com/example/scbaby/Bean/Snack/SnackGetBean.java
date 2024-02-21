@@ -13,18 +13,9 @@ import java.util.List;
 public class SnackGetBean {
     private final SnackRepository snackRepository;
     private final ToppingRepository toppingRepository;
-    private final BeverageRepository beverageRepository;
 
     public SnackDetailGetRes exec(Long snackId) {
         SnackDAO snackDAO = snackRepository.findBySnackId(snackId);
-
-        List<BeverageDAO> beverageDAOS = beverageRepository.findBySnack(snackDAO);
-        List<SnackDetailGetRes.Beverage> beverageList = beverageDAOS.stream()
-                .map(beverageDAO -> SnackDetailGetRes.Beverage.builder()
-                        .name(beverageDAO.getBeverageName())
-                        .hasAllergy(beverageDAO.isAllergy())
-                        .build())
-                .toList();
 
         List<ToppingDAO> toppingNames = toppingRepository.findBySnack(snackDAO);
         List<SnackDetailGetRes.Topping> toppingList = toppingNames.stream()
@@ -39,7 +30,6 @@ public class SnackGetBean {
                 .dateTime(snackDAO.getDateTime())
                 .amount(snackDAO.getAmount())
                 .imageUrl(snackDAO.getImageUrl())
-                .beverageList(beverageList)
                 .toppingList(toppingList)
                 .build();
 

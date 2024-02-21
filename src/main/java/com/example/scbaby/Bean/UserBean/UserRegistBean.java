@@ -13,11 +13,9 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class UserRegistBean {
     private final UserRepository userRepository;
-    private final BabyRepository babyRepository;
 
-    public StateRes exec(UserRegistReq userRegistReq) {
-        BabyDAO babyDAO = babyRepository.findById(userRegistReq.getBabyId()).orElseThrow(EntityNotFoundException::new);
-        userRepository.save(userRegistReq.toDAO(babyDAO));
+    public StateRes exec(UserRegistReq userRegistrationReq) {
+        userRepository.save(userRegistrationReq.toDAO());
         return new StateRes(true);
     }
 }

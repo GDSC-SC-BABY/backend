@@ -21,5 +21,9 @@ public class UserDAO {
     @JoinColumn(name = "baby_id")
     private BabyDAO baby;
 
+    private String imageUri;
+
+    private String relation;
+
     private String name;
 }

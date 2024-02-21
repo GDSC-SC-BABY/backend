@@ -26,7 +26,6 @@ public class BabyFoodDetailGetRes {
     @AllArgsConstructor
     public static class BasePorridge {
         private String name;
-        private boolean hasAllergy;
     }
 
     @Getter
@@ -35,6 +34,6 @@ public class BabyFoodDetailGetRes {
     @AllArgsConstructor
     public static class Topping {
         private String name;
-        private boolean hasAllergy;
+        private float amount;
     }
 }

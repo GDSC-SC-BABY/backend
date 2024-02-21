@@ -7,22 +7,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "beverages")
+@Table(name = "guide")
 @Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BeverageDAO {
+public class GuideDAO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long beverageId;
+    private Long guideId;
 
-    private String beverageName;
+    private String title;
+    private int age;
+    private String imageUrl;
+    private String pdfUrl;
 
-    @ManyToOne
-    @JoinColumn(name = "snack_id")
-    private SnackDAO snack;
-
-    @Builder.Default
-    private boolean Allergy = false;
 }

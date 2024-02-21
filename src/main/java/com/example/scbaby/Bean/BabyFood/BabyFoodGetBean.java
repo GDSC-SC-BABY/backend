@@ -4,7 +4,6 @@ import com.example.scbaby.Model.DAO.BabyFoodDAO;
 import com.example.scbaby.Model.DAO.BasePorridgeDAO;
 import com.example.scbaby.Model.DAO.ToppingDAO;
 import com.example.scbaby.Model.DTO.BabyFood.Res.BabyFoodDetailGetRes;
-import com.example.scbaby.Model.DTO.BabyFood.Res.BabyFoodGetRes;
 import com.example.scbaby.Repository.BabyFoodRepository;
 import com.example.scbaby.Repository.BasePorridgeRepository;
 import com.example.scbaby.Repository.ToppingRepository;
@@ -27,7 +26,6 @@ public class BabyFoodGetBean {
         List<BabyFoodDetailGetRes.BasePorridge> basePorridgeList = basePorridgeDAOS.stream()
                 .map(basePorridgeDAO -> BabyFoodDetailGetRes.BasePorridge.builder()
                         .name(basePorridgeDAO.getBasePorridgeName())
-                        .hasAllergy(basePorridgeDAO.isAllergy())
                         .build())
                 .toList();
 
@@ -35,7 +33,7 @@ public class BabyFoodGetBean {
         List<BabyFoodDetailGetRes.Topping> toppingList = toppingNames.stream()
                 .map(toppingDAO -> BabyFoodDetailGetRes.Topping.builder()
                         .name(toppingDAO.getToppingName())
-                        .hasAllergy(toppingDAO.isAllergy())
+                        .amount(toppingDAO.getAmount())
                         .build())
                 .toList();
 

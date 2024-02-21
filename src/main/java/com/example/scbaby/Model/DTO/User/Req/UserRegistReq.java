@@ -19,14 +19,16 @@ public class UserRegistReq {
     @NotNull
     private String name;
 
-    @NotNull
-    private Long babyId;
+    private String imageUri;
 
-    public UserDAO toDAO(BabyDAO babyDAO) {
+    private String relation;
+
+    public UserDAO toDAO() {
         return UserDAO.builder()
                 .userId(userId)
                 .name(name)
-                .baby(babyDAO)
+                .imageUri(imageUri)
+                .relation(relation)
                 .build();
     }
 }
