@@ -15,18 +15,12 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class BabyUpdateBean {
     private final BabyRepository babyRepository;
-    private final ImageUploadBean imageUploadBean;
 
-    public StateRes exec(Long babyId, BabyUpdateReq babyUpdateReq, MultipartFile multipartFile) throws IOException {
+    public StateRes exec(Long babyId, BabyUpdateReq babyUpdateReq) throws IOException {
         if (babyRepository.findById(babyId).isPresent()) {
             BabyDAO babyDAO = babyRepository.findById(babyId).get();
-            
-            String imgUrl = null;
-            if (multipartFile.getOriginalFilename() != null) {
-                imgUrl = imageUploadBean.exec(multipartFile);
-            }
 
-            babyDAO.update(babyUpdateReq, imgUrl);
+            babyDAO.update(babyUpdateReq);
             return new StateRes(true);
         }
         return new StateRes(false);

@@ -22,8 +22,8 @@ public class BabyService {
     private final BabyUpdateBean babyUpdateBean;
 
     @Transactional
-    public StateRes registerBaby(BabyRegistReq babyRegistReq, MultipartFile multipartFile, String userId) throws IOException {
-        return babyRegistBean.exec(babyRegistReq, multipartFile, userId);
+    public StateRes registerBaby(BabyRegistReq babyRegistReq) throws IOException {
+        return babyRegistBean.exec(babyRegistReq);
     }
 
     @Transactional(readOnly = true)
@@ -32,7 +32,7 @@ public class BabyService {
     }
 
     @Transactional
-    public StateRes updateBaby(Long babyId, BabyUpdateReq babyUpdateReq, MultipartFile multipartFile) throws IOException {
-        return babyUpdateBean.exec(babyId, babyUpdateReq, multipartFile);
+    public StateRes updateBaby(Long babyId, BabyUpdateReq babyUpdateReq) throws IOException {
+        return babyUpdateBean.exec(babyId, babyUpdateReq);
     }
 }

@@ -57,11 +57,11 @@ public class BabyDAO {
     @OneToMany(mappedBy = "baby")
     private List<BabyDiaryDAO> babyDiaryDAOS;
 
-    public void update(BabyUpdateReq babyUpdateReq, String imgUrl) {
+    public void update(BabyUpdateReq babyUpdateReq) {
         this.name = babyUpdateReq.getName();
         this.gender = babyUpdateReq.getGender();
         this.dateTime = babyUpdateReq.getDateTime();
-        this.imageUrl = imgUrl;
+        this.imageUrl = babyUpdateReq.getImageUrl();
         this.birthHeight = babyUpdateReq.getBirthHeight();
         this.birthWeight = babyUpdateReq.getBirthWeight();
     }
