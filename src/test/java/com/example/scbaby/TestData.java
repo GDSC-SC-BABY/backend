@@ -54,6 +54,19 @@ public class TestData {
     }
 
     @Test
+    public void TestDataImport() throws IOException {
+        userData();
+        babyData();
+        sleepData();
+        medicineData();
+        defecationData();
+        bathData();
+        growthRecordData();
+        snackData();
+        babyFoodData();
+    }
+
+    @Test
     public void userData(){
 
         List<String> RelationList = List.of(new String[]{
