@@ -5,17 +5,15 @@ import com.example.scbaby.Model.DTO.Guide.GuideGetDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class GuideService {
 
     final private GuideGetBean guideGetBean;
 
-    public GuideGetDTO getGuide() {
+    public List<GuideGetDTO> getGuide() {
         return guideGetBean.getExec();
-    }
-
-    public void setGuide(){
-        guideGetBean.setExec();
     }
 }
