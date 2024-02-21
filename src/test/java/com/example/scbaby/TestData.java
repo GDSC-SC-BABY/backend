@@ -203,7 +203,7 @@ public class TestData {
 
             BabyFoodPostReq babyFoodPostReq = BabyFoodPostReq.builder()
                     .babyId((long) (i + 1))
-                    .imageUrl("https://oasisproduct.cdn.ntruss.com/64351/detail/detail_64351_1_5b28d026-39e6-440b-b98d-7972411d9d8d.jpg")
+                    .imageUrl("https://i.namu.wiki/i/92of6qgixR3Ek99iZDDcYGU8OL09KEXvUBCQve2UuFK9uJHdzsoCLlTX_QXFCX4DCw_i39A4zSOoSpu_Isa73w.webp")
                     .dateTime(LocalDateTime.now())
                     .amount(i + 1)
                     .specialNote("specialNote" + i)
