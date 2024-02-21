@@ -21,6 +21,7 @@ public class ActivityListGetBean {
     private final BathRepository bathRepository;
     private final MedicineRepository medicineRepository;
     private final DefecationRepository defecationRepository;
+    private final BabyFoodRepository babyFoodRepository;
 
     public List<ActivityListGetRes> exec(Long babyId, LocalDate specificDate) {
         BabyDAO babyDAO = babyRepository.findById(babyId).orElseThrow(EntityNotFoundException::new);
@@ -32,14 +33,17 @@ public class ActivityListGetBean {
         List<BathDAO> bathActivities = bathRepository.findByBabyAndStartTimeBetweenOrderByStartTime(babyDAO, startDate, endDate);
         List<MedicineDAO> medicineActivities = medicineRepository.findByBabyAndStartTimeBetweenOrderByStartTime(babyDAO, startDate, endDate);
         List<DefecationDAO> defecationActivities = defecationRepository.findByBabyAndStartTimeBetweenOrderByStartTime(babyDAO, startDate, endDate);
+        List<BabyFoodDAO> babyFoodActivities = babyFoodRepository.findByBabyAndDateTimeBetweenOrderByDateTime(babyDAO, startDate, endDate);
 
-        return mergeAndSortActivities(sleepActivities, bathActivities, medicineActivities, defecationActivities);
+        return mergeAndSortActivities(sleepActivities, bathActivities, medicineActivities, defecationActivities, babyFoodActivities);
     }
 
     private List<ActivityListGetRes> mergeAndSortActivities(List<SleepDAO> sleepActivities,
-                                                     List<BathDAO> bathActivities,
-                                                     List<MedicineDAO> medicineActivities,
-                                                     List<DefecationDAO> defecationActivities) {
+                                                            List<BathDAO> bathActivities,
+                                                            List<MedicineDAO> medicineActivities,
+                                                            List<DefecationDAO> defecationActivities,
+                                                            List<BabyFoodDAO> babyFoodActivities) {
+
         List<ActivityListGetRes> allActivities = sleepActivities.stream()
                 .map(ActivityListGetRes::fromSleepDAO)
                 .collect(Collectors.toList());
@@ -54,6 +58,10 @@ public class ActivityListGetBean {
 
         allActivities.addAll(defecationActivities.stream()
                 .map(ActivityListGetRes::fromDefecationDAO)
+                .toList());
+
+        allActivities.addAll(babyFoodActivities.stream()
+                .map(ActivityListGetRes::fromBabyFoodDAO)
                 .toList());
 
         // 정렬

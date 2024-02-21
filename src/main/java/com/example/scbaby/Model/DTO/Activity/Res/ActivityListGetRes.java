@@ -1,9 +1,6 @@
 package com.example.scbaby.Model.DTO.Activity.Res;
 
-import com.example.scbaby.Model.DAO.BathDAO;
-import com.example.scbaby.Model.DAO.DefecationDAO;
-import com.example.scbaby.Model.DAO.MedicineDAO;
-import com.example.scbaby.Model.DAO.SleepDAO;
+import com.example.scbaby.Model.DAO.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -64,6 +61,17 @@ public class ActivityListGetRes {
                 sleepDAO.getEndTime(),
                 null, // specificStatus는 SleepDAO에 없음
                 sleepDAO.getMemo()
+        );
+    }
+
+    public static ActivityListGetRes fromBabyFoodDAO(BabyFoodDAO babyFoodDAO) {
+        return new ActivityListGetRes(
+                babyFoodDAO.getBabyFoodId(),
+                "BabyFood",
+                babyFoodDAO.getDateTime(),
+                null,
+                null, // specificStatus는 BabyFoodDAO에 없음
+                babyFoodDAO.getMemo()
         );
     }
 }
