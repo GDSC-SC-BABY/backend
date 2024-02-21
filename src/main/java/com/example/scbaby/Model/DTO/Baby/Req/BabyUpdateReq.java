@@ -29,8 +29,8 @@ public class BabyUpdateReq {
     private String imageUrl;
 
     @NotNull
-    private float birthHeight;
+    private String birthHeight;
 
     @NotNull
-    private float birthWeight;
+    private String birthWeight;
 }

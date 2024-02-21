@@ -7,6 +7,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin("*")
@@ -16,7 +18,7 @@ public class GuideController {
 
     @Operation(summary = "BabyId로 GrowthRecord List 조회")
     @GetMapping("/guide")
-    public GuideGetDTO getGuide() {
+    public List<GuideGetDTO> getGuide() {
         return guideService.getGuide();
     }
 

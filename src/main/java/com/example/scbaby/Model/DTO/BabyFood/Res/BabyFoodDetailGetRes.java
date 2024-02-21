@@ -1,6 +1,5 @@
 package com.example.scbaby.Model.DTO.BabyFood.Res;
 
-import com.example.scbaby.Model.DTO.Snack.Res.SnackDetailGetRes;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BabyFoodDetailGetRes {
-    private String dateTime;
+    private LocalDateTime dateTime;
     private String SpecialNote;
     private float amount;
     private String imageUrl;
@@ -27,7 +26,6 @@ public class BabyFoodDetailGetRes {
     @AllArgsConstructor
     public static class BasePorridge {
         private String name;
-        private boolean hasAllergy;
     }
 
     @Getter
@@ -36,6 +34,6 @@ public class BabyFoodDetailGetRes {
     @AllArgsConstructor
     public static class Topping {
         private String name;
-        private boolean hasAllergy;
+        private float amount;
     }
 }

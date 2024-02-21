@@ -22,17 +22,24 @@ public class BabyRegistReq {
     @NotBlank
     private String gender;
 
+    @NotBlank
+    private String imgUrl;
+
     @NotNull
     @PastOrPresent
     private LocalDateTime dateTime;
 
     @NotNull
-    private float birthHeight;
+    private String birthHeight;
 
     @NotNull
-    private float birthWeight;
+    private String birthWeight;
 
-    public BabyDAO toDAO(String imgUrl, String babyCode) {
+    @NotNull
+    private String userId;
+
+
+    public BabyDAO toDAO(String babyCode) {
         return BabyDAO.builder()
                 .name(name)
                 .gender(gender)

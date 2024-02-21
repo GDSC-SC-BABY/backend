@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BabyFoodPostReq {
     private Long babyId;
-    private String dateTime;
+    private LocalDateTime dateTime;
     private float amount;
     private String imageUrl;
     private String specialNote;
@@ -27,7 +27,6 @@ public class BabyFoodPostReq {
     @AllArgsConstructor
     public static class BasePorridge {
         private String name;
-        private boolean hasAllergy;
     }
 
     @Getter
@@ -36,6 +35,6 @@ public class BabyFoodPostReq {
     @AllArgsConstructor
     public static class Topping {
         private String name;
-        private boolean hasAllergy;
+        private float amount;
     }
 }

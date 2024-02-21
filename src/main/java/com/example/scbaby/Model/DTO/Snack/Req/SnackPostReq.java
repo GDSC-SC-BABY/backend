@@ -18,17 +18,7 @@ public class SnackPostReq {
     private float amount;
     private String imageUrl;
     private String specialNote;
-    private List<Beverage> beverageList;
     private List<Topping> toppingList;
-
-    @Getter
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class Beverage {
-        private String name;
-        private boolean hasAllergy;
-    }
 
     @Getter
     @Builder

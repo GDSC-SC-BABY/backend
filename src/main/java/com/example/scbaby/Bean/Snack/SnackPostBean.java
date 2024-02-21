@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 public class SnackPostBean {
     private final SnackRepository snackRepository;
     private final BabyRepository babyRepository;
-    private final BeverageRepository beverageRepository;
     private final ToppingRepository toppingRepository;
 
     public StateRes exec(SnackPostReq snackPostReq) {
@@ -26,20 +25,12 @@ public class SnackPostBean {
 
         SnackDAO saveSnackDAO = snackRepository.save(snackDAO);
 
-        for(int i=0;i<snackPostReq.getBeverageList().size();i++) {
-            BeverageDAO beverageDAO = BeverageDAO.builder()
-                    .snack(saveSnackDAO)
-                    .beverageName(snackPostReq.getBeverageList().get(i).getName())
-                    .Allergy(snackPostReq.getBeverageList().get(i).isHasAllergy())
-                    .build();
-            beverageRepository.save(beverageDAO);
-        }
 
         for(int i=0;i<snackPostReq.getToppingList().size();i++) {
             ToppingDAO toppingDAO = ToppingDAO.builder()
                     .snack(saveSnackDAO)
                     .toppingName(snackPostReq.getToppingList().get(i).getName())
-                    .Allergy(snackPostReq.getToppingList().get(i).isHasAllergy())
+                    .isAllergy(snackPostReq.getToppingList().get(i).isHasAllergy())
                     .build();
             toppingRepository.save(toppingDAO);
         }

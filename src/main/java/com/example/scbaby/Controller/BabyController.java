@@ -20,10 +20,8 @@ public class BabyController {
 
     @Operation(summary = "Baby 등록")
     @PostMapping("/baby")
-    public StateRes registerUser(@RequestPart BabyRegistReq babyRegistReq,
-                                 @RequestPart MultipartFile multipartFile,
-                                 @RequestPart String userId) throws IOException {
-        return babyService.registerBaby(babyRegistReq, multipartFile, userId);
+    public StateRes registerUser(@RequestBody BabyRegistReq babyRegistReq) throws IOException {
+        return babyService.registerBaby(babyRegistReq);
     }
 
     @Operation(summary = "BabyId로 Baby 조회")
@@ -34,7 +32,7 @@ public class BabyController {
 
     @Operation(summary = "Baby 수정")
     @PatchMapping("/baby/{babyId}")
-    public StateRes updateBaby(@PathVariable Long babyId, @RequestPart BabyUpdateReq babyUpdateReq, @RequestPart MultipartFile multipartFile) throws IOException {
-        return babyService.updateBaby(babyId, babyUpdateReq, multipartFile);
+    public StateRes updateBaby(@PathVariable Long babyId, @RequestBody BabyUpdateReq babyUpdateReq) throws IOException {
+        return babyService.updateBaby(babyId, babyUpdateReq);
     }
 }
