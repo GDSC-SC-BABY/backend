@@ -35,7 +35,6 @@ public class BabyFoodPostBean {
             BasePorridgeDAO basePorridgeDAO = BasePorridgeDAO.builder()
                     .babyFood(saveBabyFoodDAO)
                     .basePorridgeName(babyFoodPostReq.getBasePorridgeList().get(i).getName())
-                    .Allergy(babyFoodPostReq.getBasePorridgeList().get(i).isHasAllergy())
                     .build();
             basePorridgeRepository.save(basePorridgeDAO);
         }
@@ -44,7 +43,7 @@ public class BabyFoodPostBean {
             ToppingDAO toppingDAO = ToppingDAO.builder()
                     .babyFood(saveBabyFoodDAO)
                     .toppingName(babyFoodPostReq.getToppingList().get(i).getName())
-                    .Allergy(babyFoodPostReq.getToppingList().get(i).isHasAllergy())
+                    .amount(babyFoodPostReq.getToppingList().get(i).getAmount())
                     .build();
             toppingRepository.save(toppingDAO);
         }

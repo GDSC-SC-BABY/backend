@@ -32,9 +32,6 @@ public class SnackDAO {
     private String imageUrl;
 
     @OneToMany(mappedBy = "snack")
-    private List<BeverageDAO> beverageDAOS;
-
-    @OneToMany(mappedBy = "snack")
     private List<ToppingDAO> toppingDAOS;
 
 }
