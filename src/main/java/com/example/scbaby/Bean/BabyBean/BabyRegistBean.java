@@ -21,17 +21,15 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class BabyRegistBean {
     private final BabyRepository babyRepository;
-    private final ImageUploadBean imageUploadBean;
     private final UserRepository userRepository;
 
-    public StateRes exec(BabyRegistReq babyRegistReq, MultipartFile multipartFile, String userId) throws IOException {
-        String imgUrl = imageUploadBean.exec(multipartFile);
-        BabyDAO babyDAO = babyRegistReq.toDAO(imgUrl, babyCode());
+    public StateRes exec(BabyRegistReq babyRegistReq) throws IOException {
+        BabyDAO babyDAO = babyRegistReq.toDAO(babyCode());
         System.out.println("babyDAO = " + babyDAO);
         BabyDAO babyDAO1 = babyRepository.save(babyDAO);
         System.out.println("babyDAO1 = " + babyDAO1);
 
-        UserDAO userDAO = userRepository.findById(userId).get();
+        UserDAO userDAO = userRepository.findById(babyRegistReq.getUserId()).get();
         userDAO.setBaby(babyDAO1);
         userRepository.save(userDAO);
 
