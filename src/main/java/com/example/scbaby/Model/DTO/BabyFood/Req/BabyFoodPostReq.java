@@ -18,16 +18,9 @@ public class BabyFoodPostReq {
     private float amount;
     private String imageUrl;
     private String specialNote;
-    private List<BasePorridge> basePorridgeList;
+    private String basePorridgeName;
     private List<Topping> toppingList;
 
-    @Getter
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class BasePorridge {
-        private String name;
-    }
 
     @Getter
     @Builder
