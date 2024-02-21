@@ -40,6 +40,7 @@ public class BabyFoodListGetBean {
                 .babyFoodId(babyFoodDAO.getBabyFoodId())
                 .dateTime(babyFoodDAO.getDateTime())
                 .amount(babyFoodDAO.getAmount())
+                .basePorridgeName(babyFoodDAO.getBasePorridgeDAOS().get(0).getBasePorridgeName())
                 .imageUrl(babyFoodDAO.getImageUrl())
                 .build();
     }
