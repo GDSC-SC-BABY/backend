@@ -21,8 +21,8 @@ public class UserService {
     private final AddBabyBean addBabyBean;
 
     @Transactional
-    public StateRes registerUser(String userId) {
-        return userRegistBean.exec(userId);
+    public StateRes registerUser(UserRegistReq userRegistrationReq) {
+        return userRegistBean.exec(userRegistrationReq);
     }
 
     @Transactional(readOnly = true)

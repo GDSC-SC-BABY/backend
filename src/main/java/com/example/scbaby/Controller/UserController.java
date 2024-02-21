@@ -19,8 +19,8 @@ public class UserController {
 
     @Operation(summary = "UserId 등록")
     @PostMapping("/user")
-    public StateRes registerUser(@RequestParam  String userId) {
-        return userService.registerUser(userId);
+    public StateRes registerUser(@RequestBody UserRegistReq userRegistrationReq) {
+        return userService.registerUser(userRegistrationReq);
     }
 
     @Operation(summary = "UserId로 User 조회")
@@ -31,7 +31,7 @@ public class UserController {
 
     @Operation(summary = "UserId로 중복여부 확인")
     @GetMapping("/user/duplicate/{userId}")
-    public StateRes duplicatieUser(@RequestParam  String userId) {
+    public StateRes duplicatieUser(@PathVariable String userId) {
         return userService.duplicateCheckUser(userId);
     }
 
