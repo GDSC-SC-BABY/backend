@@ -28,5 +28,8 @@ public class ToppingDAO {
     private SnackDAO snack;
 
     @Builder.Default
-    private boolean Allergy = false;
+    private float amount = 0.0f;
+
+    @Builder.Default
+    private boolean isAllergy = false;
 }

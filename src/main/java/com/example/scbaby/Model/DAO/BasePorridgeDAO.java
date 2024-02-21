@@ -20,8 +20,4 @@ public class BasePorridgeDAO {
     @ManyToOne
     @JoinColumn(name = "baby_food_id")
     private BabyFoodDAO babyFood;
-
-
-    @Builder.Default
-    private boolean Allergy = false;
 }

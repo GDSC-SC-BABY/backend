@@ -54,8 +54,6 @@ public class BabyDAO {
     @OneToMany(mappedBy = "baby")
     private List<DefecationDAO> defecationDAOS;
 
-    @OneToMany(mappedBy = "baby")
-    private List<BabyDiaryDAO> babyDiaryDAOS;
 
     public void update(BabyUpdateReq babyUpdateReq) {
         this.name = babyUpdateReq.getName();
