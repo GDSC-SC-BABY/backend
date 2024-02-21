@@ -1,7 +1,5 @@
 package com.example.scbaby.Bean.BabyBean;
 
-import com.example.scbaby.Bean.ImageBean.ImageUploadBean;
-import com.example.scbaby.Bean.UserBean.UserGetBean;
 import com.example.scbaby.Model.DAO.BabyDAO;
 import com.example.scbaby.Model.DAO.UserDAO;
 import com.example.scbaby.Model.DTO.Baby.Req.BabyRegistReq;
@@ -10,7 +8,6 @@ import com.example.scbaby.Repository.BabyRepository;
 import com.example.scbaby.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.UUID;

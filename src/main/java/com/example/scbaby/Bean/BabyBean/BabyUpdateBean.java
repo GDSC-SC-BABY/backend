@@ -1,13 +1,11 @@
 package com.example.scbaby.Bean.BabyBean;
 
-import com.example.scbaby.Bean.ImageBean.ImageUploadBean;
 import com.example.scbaby.Model.DAO.BabyDAO;
 import com.example.scbaby.Model.DTO.Baby.Req.BabyUpdateReq;
 import com.example.scbaby.Model.DTO.StateRes;
 import com.example.scbaby.Repository.BabyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 

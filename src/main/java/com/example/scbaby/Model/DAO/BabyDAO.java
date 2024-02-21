@@ -34,8 +34,8 @@ public class BabyDAO {
     private String imageUrl;
 
     //출생 키, 몸무게
-    private float birthHeight;
-    private float birthWeight;
+    private String birthHeight;
+    private String birthWeight;
 
     private String babyCode;
 
@@ -53,7 +53,6 @@ public class BabyDAO {
 
     @OneToMany(mappedBy = "baby")
     private List<DefecationDAO> defecationDAOS;
-
 
     public void update(BabyUpdateReq babyUpdateReq) {
         this.name = babyUpdateReq.getName();

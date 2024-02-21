@@ -24,9 +24,9 @@ public class BabyGetRes {
 
     private String imageUrl;
 
-    private float birthHeight;
+    private String birthHeight;
 
-    private float birthWeight;
+    private String birthWeight;
 
     private String babyCode;
 
