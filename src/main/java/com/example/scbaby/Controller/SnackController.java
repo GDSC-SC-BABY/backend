@@ -1,13 +1,9 @@
 package com.example.scbaby.Controller;
 
-import com.example.scbaby.Model.DTO.BabyFood.Req.BabyFoodPostReq;
-import com.example.scbaby.Model.DTO.BabyFood.Res.BabyFoodDetailGetRes;
-import com.example.scbaby.Model.DTO.BabyFood.Res.BabyFoodListRes;
 import com.example.scbaby.Model.DTO.Snack.Req.SnackPostReq;
 import com.example.scbaby.Model.DTO.Snack.Res.SnackDetailGetRes;
 import com.example.scbaby.Model.DTO.Snack.Res.SnackListRes;
 import com.example.scbaby.Model.DTO.StateRes;
-import com.example.scbaby.Service.BabyFoodService;
 import com.example.scbaby.Service.SnackService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
