@@ -16,21 +16,27 @@ public class SnackController {
     private final SnackService snackService;
 
     @Operation(summary = "Snack 조회")
-    @GetMapping("/Snack")
+    @GetMapping("/snack")
     public SnackListRes getListSnackList(@RequestParam(value = "pageNo", defaultValue = "0", required = false) Integer pageNo,
                                          @RequestParam(value = "pageSize", defaultValue = "5", required = false) Integer pageSize,
                                          @RequestParam Long babyId) {
         return snackService.getListSnackList(pageNo, pageSize, babyId);
     }
 
+    @Operation(summary = "날짜별 Snack 조회")
+    @GetMapping("/snackList")
+    public SnackListRes getListBabyFoodListByDate(@RequestParam Long babyId, @RequestParam String date) {
+        return snackService.getListSnackListByDate(babyId, date);
+    }
+
     @Operation(summary = "Snack 개별 조회")
-    @GetMapping("/Snack/{snackId}")
+    @GetMapping("/snack/{snackId}")
     public SnackDetailGetRes getSnack(@PathVariable Long snackId) {
         return snackService.getSnack(snackId);
     }
 
     @Operation(summary = "Snack 등록")
-    @PostMapping("/Snack")
+    @PostMapping("/snack")
     public StateRes postSnack(@RequestBody SnackPostReq snackPostReq) {
         return snackService.postSnack(snackPostReq);
     }

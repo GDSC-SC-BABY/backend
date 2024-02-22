@@ -6,6 +6,7 @@ import com.example.scbaby.Model.DTO.BabyFood.Res.BabyFoodGetRes;
 import com.example.scbaby.Model.DTO.BabyFood.Res.BabyFoodListRes;
 import com.example.scbaby.Repository.BabyFoodRepository;
 import com.example.scbaby.Repository.BabyRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -14,14 +15,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
+@RequiredArgsConstructor
 public class BabyFoodListGetByDateBean {
+
     private final BabyFoodRepository babyFoodRepository;
     private final BabyRepository babyRepository;
-
-    public BabyFoodListGetByDateBean(BabyFoodRepository babyFoodRepository, BabyRepository babyRepository) {
-        this.babyFoodRepository = babyFoodRepository;
-        this.babyRepository = babyRepository;
-    }
 
     public BabyFoodListRes exec(Long babyId, LocalDate date) {
         BabyDAO babyDAO = babyRepository.findByBabyId(babyId);

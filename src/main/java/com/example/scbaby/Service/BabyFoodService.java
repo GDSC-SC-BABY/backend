@@ -24,7 +24,6 @@ public class BabyFoodService {
 
 
     @Transactional(readOnly = true)
-
     public BabyFoodListRes getListBabyFoodList(Integer pageNo, Integer pageSize, Long babyId) {
         return babyFoodListGetBean.exec(pageNo, pageSize, babyId);
     }
