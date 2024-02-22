@@ -138,7 +138,6 @@
 //            DefecationRegistReq defecationRegistReq = DefecationRegistReq.builder()
 //                    .babyId((long) (i + 1))
 //                    .startTime(LocalDateTime.now())
-//                    .defecationStatus("defecationStatus" + i)
 //                    .memo("memo" + i)
 //                    .build();
 //            defecationRegistBean.exec(defecationRegistReq, defecationRegistReq.getBabyId());
