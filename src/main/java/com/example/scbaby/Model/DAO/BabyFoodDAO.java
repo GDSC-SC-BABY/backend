@@ -29,7 +29,6 @@ public class BabyFoodDAO {
 
     private float amount;
     private String imageUrl;
-    private String memo;
 
     @OneToMany(mappedBy = "babyFood")
     private List<BasePorridgeDAO> basePorridgeDAOS;

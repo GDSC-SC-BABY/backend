@@ -23,14 +23,11 @@ public class DefecationDAO {
     // 기록 시작 시간
     private LocalDateTime startTime;
 
-    private String defecationStatus;
-
     private String memo;
 
-    public void update(BabyDAO baby, LocalDateTime startTime, String defecationStatus, String memo) {
+    public void update(BabyDAO baby, LocalDateTime startTime, String memo) {
         this.baby = baby;
         this.startTime = startTime;
-        this.defecationStatus = defecationStatus;
         this.memo = memo;
     }
 }

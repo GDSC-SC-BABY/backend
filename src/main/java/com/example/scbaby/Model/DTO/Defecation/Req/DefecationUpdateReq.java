@@ -19,8 +19,5 @@ public class DefecationUpdateReq {
     @PastOrPresent
     private LocalDateTime startTime;
 
-    @NotNull
-    private String defecationStatus;
-
     private String memo;
 }
