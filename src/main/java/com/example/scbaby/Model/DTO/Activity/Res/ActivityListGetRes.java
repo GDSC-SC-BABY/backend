@@ -25,7 +25,7 @@ public class ActivityListGetRes {
                 defecationDAO.getDefecationId(),
                 "Defecation",
                 defecationDAO.getStartTime(),
-                null, // endTime은 DefecationDAO에 없음
+                null,
                 null,
                 defecationDAO.getMemo()
         );
@@ -71,7 +71,7 @@ public class ActivityListGetRes {
                 babyFoodDAO.getDateTime(),
                 null,
                 null, // specificStatus는 BabyFoodDAO에 없음
-                babyFoodDAO.getMemo()
+                babyFoodDAO.getSpecialNote()
         );
     }
 }
