@@ -24,6 +24,10 @@ public class BabyFoodService {
 
 
     @Transactional(readOnly = true)
+<<<<<<< HEAD
+=======
+
+>>>>>>> a9cfa5f44a2022f4e458f5046f6a4739f1f0c6a7
     public BabyFoodListRes getListBabyFoodList(Integer pageNo, Integer pageSize, Long babyId) {
         return babyFoodListGetBean.exec(pageNo, pageSize, babyId);
     }
