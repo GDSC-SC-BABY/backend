@@ -21,6 +21,7 @@ public class BabyFoodListGetByDateBean {
     private final BabyFoodRepository babyFoodRepository;
     private final BabyRepository babyRepository;
 
+
     public BabyFoodListRes exec(Long babyId, LocalDate date) {
         BabyDAO babyDAO = babyRepository.findByBabyId(babyId);
         LocalDateTime startDateTime = date.atStartOfDay();
