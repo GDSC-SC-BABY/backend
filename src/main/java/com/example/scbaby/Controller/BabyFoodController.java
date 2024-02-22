@@ -23,6 +23,12 @@ public class BabyFoodController {
         return babyFoodService.getListBabyFoodList(pageNo, pageSize, babyId);
     }
 
+    @Operation(summary = "날짜별 babyFood 조회")
+    @GetMapping("/babyFoodList")
+    public BabyFoodListRes getListBabyFoodListByDate(@RequestParam Long babyId,@RequestParam String date) {
+        return babyFoodService.getListBabyFoodListByDate(babyId, date);
+    }
+
     @Operation(summary = "babyFood 개별 조회")
     @GetMapping("/babyFood/{babyFoodId}")
     public BabyFoodDetailGetRes getBabyFood(@PathVariable Long babyFoodId) {
