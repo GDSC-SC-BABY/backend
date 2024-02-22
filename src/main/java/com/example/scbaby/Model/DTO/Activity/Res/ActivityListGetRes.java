@@ -26,7 +26,7 @@ public class ActivityListGetRes {
                 "Defecation",
                 defecationDAO.getStartTime(),
                 null, // endTime은 DefecationDAO에 없음
-                defecationDAO.getDefecationStatus(),
+                null,
                 defecationDAO.getMemo()
         );
     }

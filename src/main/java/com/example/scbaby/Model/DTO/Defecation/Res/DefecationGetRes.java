@@ -17,15 +17,12 @@ public class DefecationGetRes {
 
     private LocalDateTime startTime;
 
-    private String defecationStatus;
-
     private String memo;
 
     public static DefecationGetRes of(DefecationDAO defecationDAO) {
         return DefecationGetRes.builder()
                 .defecationId(defecationDAO.getDefecationId())
                 .startTime(defecationDAO.getStartTime())
-                .defecationStatus(defecationDAO.getDefecationStatus())
                 .memo(defecationDAO.getMemo())
                 .build();
     }
