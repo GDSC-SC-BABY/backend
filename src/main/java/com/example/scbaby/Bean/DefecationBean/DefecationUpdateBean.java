@@ -18,7 +18,6 @@ public class DefecationUpdateBean {
 
             DefecationDAO.update(DefecationDAO.getBaby(),
                                     defecationUpdateReq.getStartTime(),
-                                    defecationUpdateReq.getDefecationStatus(),
                                     defecationUpdateReq.getMemo());
 
             return new StateRes(true);

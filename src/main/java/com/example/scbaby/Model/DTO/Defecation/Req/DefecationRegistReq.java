@@ -20,9 +20,6 @@ public class DefecationRegistReq {
     @PastOrPresent
     private LocalDateTime startTime;
 
-    @NotNull
-    private String defecationStatus;
-
     private String memo;
 
     private Long babyId;
@@ -30,7 +27,6 @@ public class DefecationRegistReq {
     public DefecationDAO toDAO(BabyDAO babyDAO) {
         return DefecationDAO.builder()
                 .startTime(startTime)
-                .defecationStatus(defecationStatus)
                 .memo(memo)
                 .baby(babyDAO)
                 .build();
