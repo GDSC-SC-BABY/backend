@@ -39,7 +39,7 @@ public class UserService {
         return getBabyIdByUserIdBean.exec(userId);
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public StateRes addBaby(AddBabyReq addBabyReq) {
         return addBabyBean.exec(addBabyReq);
     }
